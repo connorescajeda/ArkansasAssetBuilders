@@ -3,8 +3,7 @@ namespace ArkansasAssetBuilders.Models
 {
     public class TaxYear
     {
-        public TaxYear()
-        {
-        }
+        public int TaxYearID { get; set; }
+        public int ClientID { get; set; }
     }
 }
