@@ -1,40 +1,79 @@
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\appsettings.Development.json
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\appsettings.json
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\ArkansasAssetBuilders.exe
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\ArkansasAssetBuilders.deps.json
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\ArkansasAssetBuilders.runtimeconfig.json
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\ArkansasAssetBuilders.runtimeconfig.dev.json
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\ArkansasAssetBuilders.dll
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\ref\ArkansasAssetBuilders.dll
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\ArkansasAssetBuilders.pdb
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\ArkansasAssetBuilders.Views.dll
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\bin\Debug\net5.0\ArkansasAssetBuilders.Views.pdb
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.csproj.AssemblyReference.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.GeneratedMSBuildEditorConfig.editorconfig
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.AssemblyInfoInputs.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.AssemblyInfo.cs
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.csproj.CoreCompileInputs.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.MvcApplicationPartsAssemblyInfo.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.RazorAssemblyInfo.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.RazorAssemblyInfo.cs
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\staticwebassets\ArkansasAssetBuilders.StaticWebAssets.Manifest.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\staticwebassets\ArkansasAssetBuilders.StaticWebAssets.xml
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\scopedcss\bundle\ArkansasAssetBuilders.styles.css
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.TagHelpers.input.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.TagHelpers.output.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.RazorCoreGenerate.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\Index.cshtml.g.cs
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\Privacy.cshtml.g.cs
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\Shared\_Layout.cshtml.g.cs
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\_ViewImports.cshtml.g.cs
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\_ViewStart.cshtml.g.cs
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.RazorTargetAssemblyInfo.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.RazorTargetAssemblyInfo.cs
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.Views.pdb
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.dll
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ref\ArkansasAssetBuilders.dll
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.pdb
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.genruntimeconfig.cache
-C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\ArkansasAssetBuilders.csproj.CopyComplete
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/appsettings.Development.json
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/appsettings.json
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.exe
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.deps.json
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.runtimeconfig.json
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.runtimeconfig.dev.json
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.dll
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ref/ArkansasAssetBuilders.dll
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.pdb
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.Views.dll
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.Views.pdb
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.csproj.AssemblyReference.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.GeneratedMSBuildEditorConfig.editorconfig
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.AssemblyInfoInputs.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.AssemblyInfo.cs
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.csproj.CoreCompileInputs.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.MvcApplicationPartsAssemblyInfo.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.RazorAssemblyInfo.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.RazorAssemblyInfo.cs
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/staticwebassets/ArkansasAssetBuilders.StaticWebAssets.Manifest.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/staticwebassets/ArkansasAssetBuilders.StaticWebAssets.xml
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/scopedcss/bundle/ArkansasAssetBuilders.styles.css
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.TagHelpers.input.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.TagHelpers.output.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.RazorCoreGenerate.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/Error.cshtml.g.cs
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/Index.cshtml.g.cs
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/Privacy.cshtml.g.cs
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/Shared/_Layout.cshtml.g.cs
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/Shared/_ValidationScriptsPartial.cshtml.g.cs
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/_ViewImports.cshtml.g.cs
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/_ViewStart.cshtml.g.cs
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.RazorTargetAssemblyInfo.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.RazorTargetAssemblyInfo.cs
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.Views.pdb
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.dll
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ref/ArkansasAssetBuilders.dll
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.pdb
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.genruntimeconfig.cache
+C:/Local Github/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.csproj.CopyComplete
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/appsettings.Development.json
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/appsettings.json
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.deps.json
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.runtimeconfig.json
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.runtimeconfig.dev.json
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.dll
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ref/ArkansasAssetBuilders.dll
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.pdb
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.Views.dll
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/bin/Debug/net5.0/ArkansasAssetBuilders.Views.pdb
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.csproj.AssemblyReference.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.GeneratedMSBuildEditorConfig.editorconfig
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.AssemblyInfoInputs.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.AssemblyInfo.cs
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.csproj.CoreCompileInputs.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.MvcApplicationPartsAssemblyInfo.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.RazorAssemblyInfo.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.RazorAssemblyInfo.cs
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/staticwebassets/ArkansasAssetBuilders.StaticWebAssets.Manifest.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/staticwebassets/ArkansasAssetBuilders.StaticWebAssets.xml
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/scopedcss/bundle/ArkansasAssetBuilders.styles.css
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.TagHelpers.input.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.TagHelpers.output.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.RazorCoreGenerate.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/Error.cshtml.g.cs
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/Index.cshtml.g.cs
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/Privacy.cshtml.g.cs
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/Shared/_Layout.cshtml.g.cs
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/Shared/_ValidationScriptsPartial.cshtml.g.cs
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/_ViewImports.cshtml.g.cs
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/Razor/Pages/_ViewStart.cshtml.g.cs
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.RazorTargetAssemblyInfo.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.RazorTargetAssemblyInfo.cs
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.Views.pdb
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.dll
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ref/ArkansasAssetBuilders.dll
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.pdb
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.genruntimeconfig.cache
+/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/Debug/net5.0/ArkansasAssetBuilders.csproj.CopyComplete
