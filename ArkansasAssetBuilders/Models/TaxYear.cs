@@ -5,5 +5,6 @@ namespace ArkansasAssetBuilders.Models
     {
         public int TaxYearID { get; set; }
         public int ID { get; set; }
+        
     }
 }

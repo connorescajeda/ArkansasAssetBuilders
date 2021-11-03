@@ -8,6 +8,8 @@
     <Folder Include="Models\" />
     <Folder Include="Pages\Clients\" />
     <Folder Include="Pages\Demographics\" />
+    <Folder Include="Pages\TaxYears\" />
+    <Folder Include="Pages\ReturnDatas\" />
   </ItemGroup>
 
   <ItemGroup>

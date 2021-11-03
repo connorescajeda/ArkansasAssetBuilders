@@ -515,3 +515,13 @@ C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Raz
 C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\Demographics\Details.cshtml.g.cs
 C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\Demographics\Edit.cshtml.g.cs
 C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\Demographics\Index.cshtml.g.cs
+C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\ReturnDatas\Create.cshtml.g.cs
+C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\ReturnDatas\Delete.cshtml.g.cs
+C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\ReturnDatas\Details.cshtml.g.cs
+C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\ReturnDatas\Edit.cshtml.g.cs
+C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\ReturnDatas\Index.cshtml.g.cs
+C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\TaxYears\Create.cshtml.g.cs
+C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\TaxYears\Delete.cshtml.g.cs
+C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\TaxYears\Details.cshtml.g.cs
+C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\TaxYears\Edit.cshtml.g.cs
+C:\Local Github\ArkansasAssetBuilders\ArkansasAssetBuilders\obj\Debug\net5.0\Razor\Pages\TaxYears\Index.cshtml.g.cs

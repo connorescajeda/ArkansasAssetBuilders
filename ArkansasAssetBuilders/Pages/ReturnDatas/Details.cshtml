@@ -1,0 +1,61 @@
+@page
+@model ArkansasAssetBuilders.Pages.ReturnDatas.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ReturnData</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReturnData.TaxYearID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReturnData.TaxYearID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReturnData.FederalReturn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReturnData.FederalReturn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReturnData.TotalRefund)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReturnData.TotalRefund)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReturnData.EITC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReturnData.EITC)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReturnData.CTC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReturnData.CTC)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReturnData.Dependents)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReturnData.Dependents)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReturnData.SurveyScore)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReturnData.SurveyScore)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ReturnData.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

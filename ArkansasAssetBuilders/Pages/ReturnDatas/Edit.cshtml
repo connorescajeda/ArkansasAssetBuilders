@@ -1,0 +1,65 @@
+@page
+@model ArkansasAssetBuilders.Pages.ReturnDatas.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ReturnData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ReturnData.ID" />
+            <div class="form-group">
+                <label asp-for="ReturnData.TaxYearID" class="control-label"></label>
+                <input asp-for="ReturnData.TaxYearID" class="form-control" />
+                <span asp-validation-for="ReturnData.TaxYearID" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ReturnData.FederalReturn" /> @Html.DisplayNameFor(model => model.ReturnData.FederalReturn)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReturnData.TotalRefund" class="control-label"></label>
+                <input asp-for="ReturnData.TotalRefund" class="form-control" />
+                <span asp-validation-for="ReturnData.TotalRefund" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReturnData.EITC" class="control-label"></label>
+                <input asp-for="ReturnData.EITC" class="form-control" />
+                <span asp-validation-for="ReturnData.EITC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReturnData.CTC" class="control-label"></label>
+                <input asp-for="ReturnData.CTC" class="form-control" />
+                <span asp-validation-for="ReturnData.CTC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReturnData.Dependents" class="control-label"></label>
+                <input asp-for="ReturnData.Dependents" class="form-control" />
+                <span asp-validation-for="ReturnData.Dependents" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReturnData.SurveyScore" class="control-label"></label>
+                <input asp-for="ReturnData.SurveyScore" class="form-control" />
+                <span asp-validation-for="ReturnData.SurveyScore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
