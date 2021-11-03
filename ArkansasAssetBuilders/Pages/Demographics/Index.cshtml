@@ -1,0 +1,60 @@
+@page
+@model ArkansasAssetBuilders.Pages.Demographics.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographic[0].TaxYearID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographic[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographic[0].Zip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographic[0].County)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographic[0].State)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Demographic) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaxYearID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.County)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -29,7 +29,7 @@ namespace ArkansasAssetBuilders.Pages.Clients
                 return NotFound();
             }
 
-            Client = await _context.Client.FirstOrDefaultAsync(m => m.ClientID == id);
+            Client = await _context.Client.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Client == null)
             {

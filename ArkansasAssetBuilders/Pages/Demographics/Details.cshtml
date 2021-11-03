@@ -1,0 +1,49 @@
+@page
+@model ArkansasAssetBuilders.Pages.Demographics.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Demographic</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Demographic.TaxYearID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Demographic.TaxYearID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Demographic.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Demographic.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Demographic.Zip)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Demographic.Zip)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Demographic.County)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Demographic.County)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Demographic.State)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Demographic.State)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Demographic.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

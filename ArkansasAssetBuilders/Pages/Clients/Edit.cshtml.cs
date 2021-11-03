@@ -30,7 +30,7 @@ namespace ArkansasAssetBuilders.Pages.Clients
                 return NotFound();
             }
 
-            Client = await _context.Client.FirstOrDefaultAsync(m => m.ClientID == id);
+            Client = await _context.Client.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Client == null)
             {
@@ -56,7 +56,7 @@ namespace ArkansasAssetBuilders.Pages.Clients
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClientExists(Client.ClientID))
+                if (!ClientExists(Client.ID))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace ArkansasAssetBuilders.Pages.Clients
 
         private bool ClientExists(int id)
         {
-            return _context.Client.Any(e => e.ClientID == id);
+            return _context.Client.Any(e => e.ID == id);
         }
     }
 }

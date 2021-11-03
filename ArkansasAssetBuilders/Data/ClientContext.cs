@@ -15,5 +15,7 @@ namespace ArkansasAssetBuilders.Data
         }
 
         public DbSet<ArkansasAssetBuilders.Models.Client> Client { get; set; }
+
+        public DbSet<ArkansasAssetBuilders.Models.Demographic> Demographic { get; set; }
     }
 }

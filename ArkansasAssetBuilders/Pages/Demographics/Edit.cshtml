@@ -1,0 +1,55 @@
+@page
+@model ArkansasAssetBuilders.Pages.Demographics.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Demographic</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Demographic.ID" />
+            <div class="form-group">
+                <label asp-for="Demographic.TaxYearID" class="control-label"></label>
+                <input asp-for="Demographic.TaxYearID" class="form-control" />
+                <span asp-validation-for="Demographic.TaxYearID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.Address" class="control-label"></label>
+                <input asp-for="Demographic.Address" class="form-control" />
+                <span asp-validation-for="Demographic.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.Zip" class="control-label"></label>
+                <input asp-for="Demographic.Zip" class="form-control" />
+                <span asp-validation-for="Demographic.Zip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.County" class="control-label"></label>
+                <input asp-for="Demographic.County" class="form-control" />
+                <span asp-validation-for="Demographic.County" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.State" class="control-label"></label>
+                <input asp-for="Demographic.State" class="form-control" />
+                <span asp-validation-for="Demographic.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

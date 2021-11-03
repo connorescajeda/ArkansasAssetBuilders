@@ -29,6 +29,7 @@ namespace ArkansasAssetBuilders
 
             services.AddDbContext<ClientContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("ClientContext")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

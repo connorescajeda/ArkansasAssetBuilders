@@ -20,7 +20,7 @@ namespace ArkansasAssetBuilders.Migrations
 
             modelBuilder.Entity("ArkansasAssetBuilders.Models.Client", b =>
                 {
-                    b.Property<int>("ClientID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -36,7 +36,7 @@ namespace ArkansasAssetBuilders.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ClientID");
+                    b.HasKey("ID");
 
                     b.ToTable("Client");
                 });

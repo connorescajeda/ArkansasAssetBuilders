@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/ArkansasAssetBuilders.csproj": {}
+    "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj": {}
   },
   "projects": {
-    "/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/ArkansasAssetBuilders.csproj": {
+    "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/ArkansasAssetBuilders.csproj",
+        "projectUniqueName": "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
         "projectName": "ArkansasAssetBuilders",
-        "projectPath": "/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/ArkansasAssetBuilders.csproj",
-        "packagesPath": "/Users/juliebdick/.nuget/packages/",
-        "outputPath": "/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/",
+        "projectPath": "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
+        "packagesPath": "C:\\Users\\garre\\.nuget\\packages\\",
+        "outputPath": "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/juliebdick/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\garre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -88,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -11,7 +11,7 @@ namespace ArkansasAssetBuilders.Migrations
                 name: "Client",
                 columns: table => new
                 {
-                    ClientID = table.Column<int>(type: "INTEGER", nullable: false)
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     FirstName = table.Column<string>(type: "TEXT", nullable: true),
                     LastName = table.Column<string>(type: "TEXT", nullable: true),
@@ -20,7 +20,7 @@ namespace ArkansasAssetBuilders.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Client", x => x.ClientID);
+                    table.PrimaryKey("PK_Client", x => x.ID);
                 });
         }
 

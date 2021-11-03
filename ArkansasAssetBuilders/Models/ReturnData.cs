@@ -3,7 +3,7 @@ namespace ArkansasAssetBuilders.Models
 {
     public class ReturnData
     {
-        public int ClientID { get; set; }
+        public int ID { get; set; }
         public int TaxYear { get; set; }
         public bool FederalReturn { get; set; }
         public int TotalRefund { get; set; }
