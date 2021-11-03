@@ -7,10 +7,12 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Pages\Clients\" />
+    <Folder Include="Pages\Demographics\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Pages\Clients\" />
+    <None Remove="Pages\Demographics\" />
   </ItemGroup>
 
   <ItemGroup>

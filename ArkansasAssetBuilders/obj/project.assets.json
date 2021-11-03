@@ -7491,26 +7491,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nmali\\.nuget\\packages\\": {}
+    "/Users/juliebdick/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nmali\\Desktop\\cathymariza.github.io\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
+      "projectUniqueName": "/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/ArkansasAssetBuilders.csproj",
       "projectName": "ArkansasAssetBuilders",
-      "projectPath": "C:\\Users\\nmali\\Desktop\\cathymariza.github.io\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
-      "packagesPath": "C:\\Users\\nmali\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nmali\\Desktop\\cathymariza.github.io\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\obj\\",
+      "projectPath": "/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/ArkansasAssetBuilders.csproj",
+      "packagesPath": "/Users/juliebdick/.nuget/packages/",
+      "outputPath": "/Users/juliebdick/OneDrive - Hendrix College/Databases and Web Systems/Final/ArkansasAssetBuilders/ArkansasAssetBuilders/obj/",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\nmali\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/juliebdick/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7576,7 +7578,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,24 +1,29 @@
 ﻿<Properties StartupConfiguration="{F7C753D8-45E2-4A0A-B5B7-2B75633BFE8F}|Default">
   <MonoDevelop.Ide.ItemProperties.ArkansasAssetBuilders PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/TaxYear.cs">
     <Files>
       <File FileName="Models/Client.cs" Line="10" Column="41" />
-      <File FileName="Models/ReturnData.cs" Line="13" Column="45" />
-      <File FileName="Models/TaxYear.cs" Line="7" Column="42" />
-      <File FileName="Models/Demographics.cs" Line="11" Column="40" />
-      <File FileName="appsettings.json" Line="11" Column="23" />
+      <File FileName="Models/ReturnData.cs" />
+      <File FileName="Models/TaxYear.cs" Line="1" Column="1" />
+      <File FileName="Models/Demographics.cs" />
+      <File FileName="appsettings.json" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ArkansasAssetBuilders" expanded="True">
             <Node name="ArkansasAssetBuilders" expanded="True">
+              <Node name="Dependencies" expanded="True" />
               <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True">
+                <Node name="20211101211345_InitialCreate.cs" expanded="True" />
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
                 <Node name="Clients" expanded="True" />
+                <Node name="Demographics" selected="True" />
               </Node>
-              <Node name="appsettings.json" expanded="True" selected="True" />
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
