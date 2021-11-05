@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\garre\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\garre\\.nuget\\packages"
+      "C:\\Users\\mango\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\mango\\.nuget\\packages"
     ]
   }
 }

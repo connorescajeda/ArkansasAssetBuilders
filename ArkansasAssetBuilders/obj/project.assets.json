@@ -7491,19 +7491,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\garre\\.nuget\\packages\\": {}
+    "C:\\Users\\mango\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
+      "projectUniqueName": "C:\\Users\\mango\\Desktop\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
       "projectName": "ArkansasAssetBuilders",
-      "projectPath": "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
-      "packagesPath": "C:\\Users\\garre\\.nuget\\packages\\",
-      "outputPath": "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\obj\\",
+      "projectPath": "C:\\Users\\mango\\Desktop\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
+      "packagesPath": "C:\\Users\\mango\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mango\\Desktop\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\garre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mango\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
