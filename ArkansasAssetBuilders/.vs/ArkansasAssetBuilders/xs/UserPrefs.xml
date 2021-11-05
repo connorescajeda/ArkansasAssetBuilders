@@ -5,7 +5,6 @@
       <File FileName="Models/Client.cs" Line="10" Column="41" />
       <File FileName="Models/ReturnData.cs" />
       <File FileName="Models/TaxYear.cs" Line="1" Column="1" />
-      <File FileName="Models/Demographics.cs" />
       <File FileName="appsettings.json" />
     </Files>
     <Pads>
@@ -18,10 +17,11 @@
               <Node name="Migrations" expanded="True">
                 <Node name="20211101211345_InitialCreate.cs" expanded="True" />
               </Node>
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="TaxYear.cs" selected="True" />
+              </Node>
               <Node name="Pages" expanded="True">
                 <Node name="Clients" expanded="True" />
-                <Node name="Demographics" selected="True" />
               </Node>
               <Node name="appsettings.json" expanded="True" />
             </Node>
