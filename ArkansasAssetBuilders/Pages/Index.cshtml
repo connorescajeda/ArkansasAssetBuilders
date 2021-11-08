@@ -4,7 +4,19 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-left">
+    <h1 class="display-4">Step 1</h1>
+
+    <div class="text-left">
+        <p>Upload File</p>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        <input asp-for="UploadedFile" />
+        <input type="submit" />
+    </form>
+
+    <h1 class="display-4">Step 2</h1>
+    <h1 class="display-4">Step 3</h1>
+    <h1 class="display-4">Step 4</h1>
 </div>
