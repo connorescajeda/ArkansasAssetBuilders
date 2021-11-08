@@ -34,7 +34,7 @@ namespace ArkansasAssetBuilders.Pages.Clients
             {
                 return Page();
             }
-
+            //below line: db (_context), talk to Client table, and Add client
             _context.Client.Add(Client);
             await _context.SaveChangesAsync();
 
