@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Text;
 
 namespace ArkansasAssetBuilders.Pages
 {
@@ -21,6 +23,7 @@ namespace ArkansasAssetBuilders.Pages
         public void OnGet()
         {
             ViewData["SuccessMessage"] = "";
+            ViewData["Data"] = "";
         }
         public IActionResult OnPostUpload(FileUpload fileUpload)
         {
@@ -35,6 +38,17 @@ namespace ArkansasAssetBuilders.Pages
                 {
                     var filePath = Path.Combine(fullPath, formFile.FileName);
 
+                    char[] delimiterChar = { ',' };
+
+                    var dataFromFile = new StringBuilder();
+                    using (var reader = new StreamReader(formFile.OpenReadStream()))
+                    {
+                        while (reader.Peek() >= 0)
+                            dataFromFile.AppendLine(reader.ReadLine());
+                    }
+
+                    ViewData["Data"] = dataFromFile;
+
                     using (var stream = System.IO.File.Create(filePath))
                     {
                         formFile.CopyToAsync(stream);
@@ -44,7 +58,7 @@ namespace ArkansasAssetBuilders.Pages
 
             // Process uploaded files
             // Don't rely on or trust the FileName property without validation.
-            ViewData["SuccessMessage"] = fileUpload.FormFiles.Count.ToString() + " files uploaded!!";
+            ViewData["SuccessMessage"] = fileUpload.FormFiles.Count.ToString() + " files uploaded!";
             return Page();
         }
     }
@@ -54,6 +68,7 @@ namespace ArkansasAssetBuilders.Pages
         [Display(Name = "File")]
         public List<IFormFile> FormFiles { get; set; } // convert to list
         public string SuccessMessage { get; set; }
+        public string Data { get; set; }
     }
 
 }
