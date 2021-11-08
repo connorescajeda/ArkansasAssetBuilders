@@ -38,6 +38,7 @@ namespace ArkansasAssetBuilders.Pages
                     using (var stream = System.IO.File.Create(filePath))
                     {
                         formFile.CopyToAsync(stream);
+                        //maybe here read csv and parse by commas, read each line through for loop and add to db using _context.Table.Add(Object)
                     }
                 }
             }
