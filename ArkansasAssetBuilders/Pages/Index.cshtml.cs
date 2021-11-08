@@ -1,45 +1,59 @@
-﻿using System.IO;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 
 namespace ArkansasAssetBuilders.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        private readonly IHostEnvironment _environment;
-
-        [BindProperty]
-        public IFormFile UploadedFile { get; set; }
-
-        public IndexModel(ILogger<IndexModel> logger, IHostEnvironment environment)
+        private string fullPath = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "UploadImages";
+        public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            _environment = environment;
         }
-
+        [BindProperty]
+        public FileUpload fileUpload { get; set; }
         public void OnGet()
         {
+            ViewData["SuccessMessage"] = "";
         }
-
-        public async Task OnPostAsync()
+        public IActionResult OnPostUpload(FileUpload fileUpload)
         {
-            if (UploadedFile == null || UploadedFile.Length == 0)
+            if (!Directory.Exists(fullPath))
             {
-                return;
+                Directory.CreateDirectory(fullPath);
+            }
+            foreach (var aformFile in fileUpload.FormFiles)
+            {
+                var formFile = aformFile;
+                if (formFile.Length > 0)
+                {
+                    var filePath = Path.Combine(fullPath, formFile.FileName);
+
+                    using (var stream = System.IO.File.Create(filePath))
+                    {
+                        formFile.CopyToAsync(stream);
+                    }
+                }
             }
 
-            _logger.LogInformation($"Uploading {UploadedFile.FileName}.");
-            string targetFileName = $"{_environment.ContentRootPath}/{UploadedFile.FileName}";
-
-            using (var stream = new FileStream(targetFileName, FileMode.Create))
-            {
-                await UploadedFile.CopyToAsync(stream);
-            }
+            // Process uploaded files
+            // Don't rely on or trust the FileName property without validation.
+            ViewData["SuccessMessage"] = fileUpload.FormFiles.Count.ToString() + " files uploaded!!";
+            return Page();
         }
     }
+    public class FileUpload
+    {
+        [Required]
+        [Display(Name = "File")]
+        public List<IFormFile> FormFiles { get; set; } // convert to list
+        public string SuccessMessage { get; set; }
+    }
+
 }

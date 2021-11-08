@@ -7,15 +7,26 @@
 <div class="text-left">
     <h1 class="display-4">Step 1</h1>
 
-    <div class="text-left">
-        <p>Upload File</p>
-    </div>
+    <form enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <label class="file">
+                <input type="file" asp-for="fileUpload.FormFiles" multiple aria-label="File browser example">
+                <span class="file-custom"></span>
+            </label>
+            <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload">
+        </div>
 
-    <form method="post" enctype="multipart/form-data">
-        <input asp-for="UploadedFile" />
-        <input type="submit" />
+
+        @{
+            if (ViewData["SuccessMessage"] != null)
+            {
+                <span class="badge badge-success"> @ViewData["SuccessMessage"]</span>
+            }
+        }
     </form>
+</div>
 
+<div class="text-left">
     <h1 class="display-4">Step 2</h1>
     <h1 class="display-4">Step 3</h1>
     <h1 class="display-4">Step 4</h1>
