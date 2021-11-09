@@ -7491,19 +7491,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\garre\\.nuget\\packages\\": {}
+    "C:\\Users\\nmali\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
+      "projectUniqueName": "C:\\Users\\nmali\\Desktop\\cathymariza.github.io\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
       "projectName": "ArkansasAssetBuilders",
-      "projectPath": "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
-      "packagesPath": "C:\\Users\\garre\\.nuget\\packages\\",
-      "outputPath": "C:\\Local Github\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\obj\\",
+      "projectPath": "C:\\Users\\nmali\\Desktop\\cathymariza.github.io\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\ArkansasAssetBuilders.csproj",
+      "packagesPath": "C:\\Users\\nmali\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nmali\\Desktop\\cathymariza.github.io\\ArkansasAssetBuilders\\ArkansasAssetBuilders\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\garre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nmali\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7576,7 +7576,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
