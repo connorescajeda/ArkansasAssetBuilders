@@ -1,0 +1,16 @@
+
+ArkansasAssetBuilders/.vs/ArkansasAssetBuilders/config/
+
+ArkansasAssetBuilders/bin/Debug/net5.0/
+
+*.editorconfig
+
+*.pdb
+
+ArkansasAssetBuilders/obj/
+
+*.dll
+
+*.json
+
+ArkansasAssetBuilders/.vs/ArkansasAssetBuilders/v16/

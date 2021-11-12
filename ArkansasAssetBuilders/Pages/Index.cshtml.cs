@@ -24,6 +24,7 @@ namespace ArkansasAssetBuilders.Pages
         {
             ViewData["SuccessMessage"] = "";
             ViewData["Data"] = "";
+            ViewData["FileName"] = "";
         }
         public IActionResult OnPostUpload(FileUpload fileUpload)
         {
@@ -48,6 +49,7 @@ namespace ArkansasAssetBuilders.Pages
                     }
 
                     ViewData["Data"] = dataFromFile;
+                    ViewData["FileName"] = formFile.FileName;
 
                     using (var stream = System.IO.File.Create(filePath))
                     {
