@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ReturnData[0].TaxYearID)
+                @Html.DisplayNameFor(model => model.ReturnData[0].TaxYear)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ReturnData[0].FederalReturn)
@@ -41,7 +41,7 @@
 @foreach (var item in Model.ReturnData) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.TaxYearID)
+                @Html.DisplayFor(modelItem => item.TaxYear)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FederalReturn)

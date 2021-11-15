@@ -1,4 +1,6 @@
 ﻿using ArkansasAssetBuilders.Models;
+using CsvHelper;
+using CsvHelper.Configuration;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -6,7 +8,10 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace ArkansasAssetBuilders.Pages
@@ -26,21 +31,49 @@ namespace ArkansasAssetBuilders.Pages
             ViewData["SuccessMessage"] = "";
             ViewData["Data"] = "";
         }
-        public IActionResult OnPostUpload(FileUpload fileUpload)
+        public ActionResult OnPostUpload(FileUpload fileUpload)
         {
+            //check if file directory exits, if not, make one
             if (!Directory.Exists(fullPath))
             {
                 Directory.CreateDirectory(fullPath);
             }
 
+            //for each file in the form files
             foreach (var file in fileUpload.FormFiles)
             {
+                //create a new configuration for csvHelper
+                var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+                {
+                    HeaderValidated = null,
+                };
+
+                //use streamReader and csvHelper to pull records from file
                 using (var sreader = new StreamReader(file.OpenReadStream()))
                 {
-                    string[] headers = sreader.ReadLine().Split(',');
-                    while (!sreader.EndOfStream)
+                    using (var csv = new CsvReader(sreader, CultureInfo.CurrentCulture))
                     {
-                        string[] rows = sreader.ReadLine().Split(',');
+
+                        //create new lists for all class data types
+                        List<Client> clients = new List<Client>();
+                        List<TaxYear> taxYearData = new List<TaxYear>();
+                        List<Demographic> demographics = new List<Demographic>();
+                        List<ReturnData> returnData = new List<ReturnData>();
+
+                        //add all context mappings for different header names for the same data
+                        csv.Context.RegisterClassMap<ClientMap>();
+                        csv.Context.RegisterClassMap<DemoMap>();
+                        csv.Context.RegisterClassMap<DataMap>();
+                        csv.Context.RegisterClassMap<TaxYearMap>();
+
+                        //grab records and add them to lists
+                        clients = csv.GetRecords<Client>().ToList();
+                        demographics = csv.GetRecords<Demographic>().ToList();
+                        taxYearData = csv.GetRecords<TaxYear>().ToList();
+                        returnData = csv.GetRecords<ReturnData>().ToList();
+
+                        Console.WriteLine(clients);
+
                     }
                 }
             }
@@ -57,4 +90,59 @@ namespace ArkansasAssetBuilders.Pages
             public string Data { get; set; }
         }
     }
+
+
+    //Client data mapping
+    public sealed class ClientMap : ClassMap<Client>
+    {
+        public ClientMap()
+        {
+            Map(m => m.ID).Name("ID", "Id");
+            Map(m => m.FirstName).Name("FirstName", "First Name");
+            Map(m => m.LastName).Name("LastName", "Last Name");
+            Map(m => m.DoB).Name("DateOfBirth", "DoB", "Date of Birth");
+            Map(m => m.Last4SS).Name("Last 4", "XXX-XX-1234", "Last Four", "Last 4 SS");
+        }
+    }
+
+    //Demographic data mapping
+    public sealed class DemoMap : ClassMap<Demographic>
+    {
+        public DemoMap()
+        {
+            Map(m => m.ID).Name("ID", "Id");
+            Map(m => m.TaxYear).Name("Tax Year", "TaxYear");
+            Map(m => m.Address).Name("Street Adress", "Address");
+            Map(m => m.Zip).Name("ZIP", "Zip", "zip", "Postal Code");
+            Map(m => m.County).Name("County", "Location");
+            Map(m => m.State).Name("State", "ST");
+        }
+    }
+
+    //ReturnData data mapping
+    public sealed class DataMap : ClassMap<ReturnData>
+    {
+        public DataMap()
+        {
+            Map(m => m.ID).Name("ID", "Id");
+            Map(m => m.TaxYear).Name("TaxYear", "Tax Year");
+            Map(m => m.FederalReturn).Name("FedReturn", "Federal");
+            Map(m => m.TotalRefund).Name("Total Refund", "TotalRefund");
+            Map(m => m.EITC).Name("EITC");
+            Map(m => m.CTC).Name("CTC");
+            Map(m => m.Dependents).Name("dependents");
+            Map(m => m.SurveyScore).Name("Questions");
+        }
+    }
+
+    //TaxYear data mapping
+    public sealed class TaxYearMap : ClassMap<TaxYear>
+    {
+        public TaxYearMap()
+        {
+            Map(m => m.TaxYearID).Name("TaxYear", "Tax Year");
+            Map(m => m.ID).Name("ID", "Id");
+        }
+    }
+
 }
