@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ArkansasAssetBuilders.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
@@ -13,7 +14,7 @@ namespace ArkansasAssetBuilders.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        private string fullPath = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "UploadImages";
+        private string fullPath = "/UploadedCSVs/";
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -24,7 +25,6 @@ namespace ArkansasAssetBuilders.Pages
         {
             ViewData["SuccessMessage"] = "";
             ViewData["Data"] = "";
-            ViewData["FileName"] = "";
         }
         public IActionResult OnPostUpload(FileUpload fileUpload)
         {
@@ -32,46 +32,29 @@ namespace ArkansasAssetBuilders.Pages
             {
                 Directory.CreateDirectory(fullPath);
             }
-            foreach (var aformFile in fileUpload.FormFiles)
+
+            foreach (var file in fileUpload.FormFiles)
             {
-                var formFile = aformFile;
-                if (formFile.Length > 0)
+                using (var sreader = new StreamReader(file.OpenReadStream()))
                 {
-                    var filePath = Path.Combine(fullPath, formFile.FileName);
-
-                    char[] delimiterChar = { ',' };
-
-                    var dataFromFile = new StringBuilder();
-                    using (var reader = new StreamReader(formFile.OpenReadStream()))
+                    string[] headers = sreader.ReadLine().Split(',');
+                    while (!sreader.EndOfStream)
                     {
-                        while (reader.Peek() >= 0)
-                            dataFromFile.AppendLine(reader.ReadLine());
-                    }
-
-                    ViewData["Data"] = dataFromFile;
-                    ViewData["FileName"] = formFile.FileName;
-
-                    using (var stream = System.IO.File.Create(filePath))
-                    {
-                        formFile.CopyToAsync(stream);
-                        //maybe here read csv and parse by commas, read each line through for loop and add to db using _context.Table.Add(Object)
+                        string[] rows = sreader.ReadLine().Split(',');
                     }
                 }
             }
-
             // Process uploaded files
-            // Don't rely on or trust the FileName property without validation.
-            ViewData["SuccessMessage"] = fileUpload.FormFiles.Count.ToString() + " files uploaded!";
+            ViewData["SuccessMessage"] = fileUpload.FormFiles.Count.ToString() + " file(s) uploaded!";
             return Page();
         }
+        public class FileUpload
+        {
+            [Required]
+            [Display(Name = "File")]
+            public List<IFormFile> FormFiles { get; set; } // convert to list
+            public string SuccessMessage { get; set; }
+            public string Data { get; set; }
+        }
     }
-    public class FileUpload
-    {
-        [Required]
-        [Display(Name = "File")]
-        public List<IFormFile> FormFiles { get; set; } // convert to list
-        public string SuccessMessage { get; set; }
-        public string Data { get; set; }
-    }
-
 }
