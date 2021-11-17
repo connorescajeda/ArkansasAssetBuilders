@@ -1,6 +1,4 @@
-﻿using CsvHelper.Configuration;
-using CsvHelper.Configuration.Attributes;
-using System;
+﻿using System;
 namespace ArkansasAssetBuilders.Models
 {
     public class Client

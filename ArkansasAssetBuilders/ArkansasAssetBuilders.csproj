@@ -10,7 +10,6 @@
     <Folder Include="Pages\Demographics\" />
     <Folder Include="Pages\TaxYears\" />
     <Folder Include="Pages\ReturnDatas\" />
-    <Folder Include="wwwroot\UploadedCSVs\" />
   </ItemGroup>
 
   <ItemGroup>

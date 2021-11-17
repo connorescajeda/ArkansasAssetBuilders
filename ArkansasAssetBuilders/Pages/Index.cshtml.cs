@@ -18,26 +18,14 @@ namespace ArkansasAssetBuilders.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-        private string fullPath = "/UploadedCSVs/";
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
         [BindProperty]
         public FileUpload fileUpload { get; set; }
         public void OnGet()
         {
-            ViewData["SuccessMessage"] = "";
-            ViewData["Data"] = "";
+            ViewData["SuccessMessage"] = "Upload the necessary files";
         }
         public ActionResult OnPostUpload(FileUpload fileUpload)
         {
-            //check if file directory exits, if not, make one
-            if (!Directory.Exists(fullPath))
-            {
-                Directory.CreateDirectory(fullPath);
-            }
 
             //for each file in the form files
             foreach (var file in fileUpload.FormFiles)
@@ -48,11 +36,21 @@ namespace ArkansasAssetBuilders.Pages
                     HeaderValidated = null,
                 };
 
+                //records from the uploaded files
+                dynamic records = null;
+
                 //use streamReader and csvHelper to pull records from file
                 using (var sreader = new StreamReader(file.OpenReadStream()))
                 {
                     using (var csv = new CsvReader(sreader, CultureInfo.CurrentCulture))
                     {
+
+                        //all records from csv file
+                        records = csv.GetRecords<dynamic>().ToList();
+
+                        //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
+                        
+                        //foreach (var record in records)
 
                         //create new lists for all class data types
                         List<Client> clients = new List<Client>();
