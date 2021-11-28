@@ -50,6 +50,7 @@ namespace ArkansasAssetBuilders.Pages
 
                         //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
                         
+                        
                         //foreach (var record in records)
 
                         //create new lists for all class data types
@@ -110,7 +111,7 @@ namespace ArkansasAssetBuilders.Pages
         {
             Map(m => m.ID).Name("ID", "Id");
             Map(m => m.TaxYear).Name("Tax Year", "TaxYear");
-            Map(m => m.Address).Name("Street Adress", "Address");
+            Map(m => m.Address).Name("Street Address", "Address");
             Map(m => m.Zip).Name("ZIP", "Zip", "zip", "Postal Code");
             Map(m => m.County).Name("County", "Location");
             Map(m => m.State).Name("State", "ST");
