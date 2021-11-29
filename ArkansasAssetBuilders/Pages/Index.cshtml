@@ -7,6 +7,7 @@
 <img src="~/Images/aab-logo-web-textonly.png" width="1000" height="250" alt="Arkansas Asset Builders" />
 <div class="text-left">
     <h1 class="display-4">Step 1: Upload</h1>
+    <p>(MAX of 4 FILES)</p>
 
     <div class="text-center">
         <form enctype="multipart/form-data" method="post">
@@ -26,23 +27,104 @@
             }
         </form>
     </div>
-    <div class="text-left">
-        <h2>Files:</h2>
-        <div class="text-center">
-
-        </div>
-    </div>
 </div>
 
 <div class="text-left">
     <h2 class="display-4">Step 2: Merge</h2>
-    <p> Select the files to be merged (or removed). Assign a Tax Year for each file.</p>
+    <p> Select the files to be merged. Files NOT selected will not be merged! Assign a Tax Year for each file.</p>
+    <div class="text-left">
+        <h2>Files:</h2>
+        <div class="text-left">
+
+            <p>
+                <input type="radio" name="selector1" id="S1" />
+
+                @ViewData["1"]
+
+                <select name="taxyear">
+                    <option value="">Select a Tax Year</option>
+                    <option value="1">2016</option>
+                    <option value="2">2017</option>
+                    <option value="3">2018</option>
+                    <option value="4">2019</option>
+                    <option value="5">2020</option>
+                    <option value="6">2021</option>
+                    <option value="7">2022</option>
+                    <option value="8">2023</option>
+                </select>
+
+                <input type=button value="Uncheck" onclick="document.getElementById('S1').checked = false">
+            </p>
+
+            <p>
+                <input type="radio" name="selector2" id="S2"/>
+
+                @ViewData["2"]
+
+                <select name="taxyear">
+                    <option value="">Select a Tax Year</option>
+                    <option value="1">2016</option>
+                    <option value="2">2017</option>
+                    <option value="3">2018</option>
+                    <option value="4">2019</option>
+                    <option value="5">2020</option>
+                    <option value="6">2021</option>
+                    <option value="7">2022</option>
+                    <option value="8">2023</option>
+                </select>
+
+                <input type=button value="Uncheck" onclick="document.getElementById('S2').checked = false">
+            </p>
+
+            <p>
+                <input type="radio" name="selector3" id="S3"/>
+
+                @ViewData["3"]
+                <select name="taxyear">
+                    <option value="">Select a Tax Year</option>
+                    <option value="1">2016</option>
+                    <option value="2">2017</option>
+                    <option value="3">2018</option>
+                    <option value="4">2019</option>
+                    <option value="5">2020</option>
+                    <option value="6">2021</option>
+                    <option value="7">2022</option>
+                    <option value="8">2023</option>
+                </select>
+
+                <input type=button value="Uncheck" onclick="document.getElementById('S3').checked = false">
+            </p>
+            <p>
+                <input type="radio" name="selector4" id="S4"/>
+
+                @ViewData["4"]
+
+                <select name="taxyear">
+                    <option value="">Select a Tax Year</option>
+                    <option value="1">2016</option>
+                    <option value="2">2017</option>
+                    <option value="3">2018</option>
+                    <option value="4">2019</option>
+                    <option value="5">2020</option>
+                    <option value="6">2021</option>
+                    <option value="7">2022</option>
+                    <option value="8">2023</option>
+                </select>
+
+                <input type=button value="Uncheck" onclick="document.getElementById('S4').checked = false">
+            </p>
+        </div>
+        <div class="text-center">
+            <input asp-page-handler="Merge" class="btn btn-primary" type="submit" value="Merge">
+        </div>
+    </div>
 </div>
 
 <div class="text-left">
     <h2 class="display-4">Step 3: Generate Reports</h2>
     <h4>Client Report</h4>
     <p>Search by Client ID, name, or date of birth</p>
+    <input type="text" placeholder="Search..">
 </div>
 
 <div class="text-left"> 

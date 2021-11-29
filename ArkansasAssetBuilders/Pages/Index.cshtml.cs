@@ -22,14 +22,21 @@ namespace ArkansasAssetBuilders.Pages
         public FileUpload fileUpload { get; set; }
         public void OnGet()
         {
-            ViewData["SuccessMessage"] = "Upload the necessary files";
+            ViewData["SuccessMessage"] = "Upload necessary files (MAX OF 4 FILES)";
         }
         public ActionResult OnPostUpload(FileUpload fileUpload)
         {
-
+            //counter
+            int i = 1;
+            
             //for each file in the form files
             foreach (var file in fileUpload.FormFiles)
             {
+
+                //display filenames
+                ViewData[i.ToString()] = file.FileName;
+                i++;
+
                 //create a new configuration for csvHelper
                 var config = new CsvConfiguration(CultureInfo.InvariantCulture)
                 {
