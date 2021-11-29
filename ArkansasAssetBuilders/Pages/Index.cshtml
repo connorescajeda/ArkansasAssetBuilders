@@ -131,7 +131,12 @@
 
 <div class="text-left">
     <h3 class="display-4">Step 3: Generate Reports</h3>
-    <h4>Client Report</h4>
+    <p>Click button below to see files</p>
+ 
+    <form method="get">
+        <button type="submit" asp-page="/clients/index">Client Report</button>
+    </form>
+    <p></p>
     <p>Search by Client ID, name, or date of birth</p>
     <input type="text" placeholder="Search..">
 </div>
