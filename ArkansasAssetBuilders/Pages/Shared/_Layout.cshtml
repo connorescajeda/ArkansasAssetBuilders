@@ -10,14 +10,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Arkansas Asset Builders</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <header class="container">
+        <div class="row">
+            <h1 class="col-sm-4">
+                <img src="~/Images/aab-logo-web-textonly.png" width="250" height="70" alt="Arkansas Asset Builders" />
+            </h1>
+            <nav class="col-sm-8 text-right">
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -25,9 +23,11 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-        </nav>
+                
+            </nav>
+        </div>
     </header>
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

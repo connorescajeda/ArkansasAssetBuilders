@@ -4,9 +4,18 @@
     ViewData["Title"] = "Home page";
 }
 
-<img src="~/Images/aab-logo-web-textonly.png" width="1000" height="250" alt="Arkansas Asset Builders" />
+<section class="jumbotron">
+    <div class="container">
+        <div class="row text-center">
+            <div class="jumbotron-img" style="background-image: url('../wwwroot/Images/aab.jpg');"></div>
+                <h1>Arkansas Asset Builders</h1>
+        </div>
+    </div>
+</section>
+
+
 <div class="text-left">
-    <h1 class="display-4">Step 1: Upload</h1>
+    <h3 class="display-4">Step 1: Upload</h3>
     <p>(MAX of 4 FILES)</p>
 
     <div class="text-center">
@@ -30,10 +39,10 @@
 </div>
 
 <div class="text-left">
-    <h2 class="display-4">Step 2: Merge</h2>
+    <h4 class="display-4">Step 2: Merge</h4>
     <p> Select the files to be merged. Files NOT selected will not be merged! Assign a Tax Year for each file.</p>
     <div class="text-left">
-        <h2>Files:</h2>
+        <h4>Files:</h4>
         <div class="text-left">
 
             <p>
@@ -57,7 +66,7 @@
             </p>
 
             <p>
-                <input type="radio" name="selector2" id="S2"/>
+                <input type="radio" name="selector2" id="S2" />
 
                 @ViewData["2"]
 
@@ -77,7 +86,7 @@
             </p>
 
             <p>
-                <input type="radio" name="selector3" id="S3"/>
+                <input type="radio" name="selector3" id="S3" />
 
                 @ViewData["3"]
                 <select name="taxyear">
@@ -95,7 +104,7 @@
                 <input type=button value="Uncheck" onclick="document.getElementById('S3').checked = false">
             </p>
             <p>
-                <input type="radio" name="selector4" id="S4"/>
+                <input type="radio" name="selector4" id="S4" />
 
                 @ViewData["4"]
 
@@ -121,13 +130,13 @@
 </div>
 
 <div class="text-left">
-    <h2 class="display-4">Step 3: Generate Reports</h2>
+    <h3 class="display-4">Step 3: Generate Reports</h3>
     <h4>Client Report</h4>
     <p>Search by Client ID, name, or date of birth</p>
     <input type="text" placeholder="Search..">
 </div>
 
-<div class="text-left"> 
-    <h2 class="display-4">Step 4: Export Report</h2>
+<div class="text-left">
+    <h3 class="display-4">Step 4: Export Report</h3>
     <p>Select the tables to be exported (or removed)</p>
 </div>
