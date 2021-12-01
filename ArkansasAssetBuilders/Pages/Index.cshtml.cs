@@ -71,16 +71,8 @@ namespace ArkansasAssetBuilders.Pages
                 {
                     using (var csv = new CsvReader(sreader, config))
                     {
-<<<<<<< Updated upstream
                         string[] headerRow = csv.HeaderRecord;
-=======
-                        //object table = InsertCSVRecords(csv)
 
-                        //all records from csv file
-                        records = csv.GetRecords<dynamic>().ToList();
-
-                        //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
->>>>>>> Stashed changes
                         
                         //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
 

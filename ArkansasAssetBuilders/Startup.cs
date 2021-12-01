@@ -35,17 +35,6 @@ namespace ArkansasAssetBuilders
 
         }
 
-        ////New SQL connection
-        //private void connection()
-        //{
-        //    object sqlconn = ConfigurationManager.ConnectionStrings["SqlCom"].ConnectionString;
-        //    SqlConnection con = new SqlConnection((string)sqlconn);
-
-        //    //services.AddDbContext<ClientContext>(options =>
-        //    //         options.UseSqlite(Configuration.GetConnectionString("ClientContext")));
-
-        //}
-
         ////Function to Insert Records  
         //private void InsertCSVRecords(DataTable csvdt)
         //{
