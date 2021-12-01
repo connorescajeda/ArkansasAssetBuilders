@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="jumbotron-img" style="background-image: url('../wwwroot/Images/aab.jpg');"></div>
-                <h1>Arkansas Asset Builders</h1>
+            <h1>Arkansas Asset Builders</h1>
         </div>
     </div>
 </section>
@@ -89,6 +89,7 @@
                 <input type="radio" name="selector3" id="S3" />
 
                 @ViewData["3"]
+
                 <select name="taxyear">
                     <option value="">Select a Tax Year</option>
                     <option value="1">2016</option>
@@ -139,6 +140,11 @@
     <p></p>
     <p>Search by Client ID, name, or date of birth</p>
     <input type="text" placeholder="Search..">
+
+
+    <p>@ViewData["clients"]</p>
+
+
 </div>
 
 <div class="text-left">
