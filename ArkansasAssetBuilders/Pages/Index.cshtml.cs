@@ -14,11 +14,22 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Microsoft.VisualBasic.CompilerServices;
+
 
 namespace ArkansasAssetBuilders.Pages
 {
     public class IndexModel : PageModel
     {
+        public class FileUpload
+        {
+            [Required]
+            [Display(Name = "File")]
+            public List<IFormFile> FormFiles { get; set; } // convert to list
+            public string SuccessMessage { get; set; }
+            public string Data { get; set; }
+        }
+
         [BindProperty]
         public FileUpload fileUpload { get; set; }
         public void OnGet()
@@ -63,7 +74,16 @@ namespace ArkansasAssetBuilders.Pages
                 {
                     using (var csv = new CsvReader(sreader, config))
                     {
+<<<<<<< Updated upstream
                         string[] headerRow = csv.HeaderRecord;
+=======
+                        //object table = InsertCSVRecords(csv)
+
+                        //all records from csv file
+                        records = csv.GetRecords<dynamic>().ToList();
+
+                        //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
+>>>>>>> Stashed changes
                         
                         //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
 
@@ -144,15 +164,40 @@ namespace ArkansasAssetBuilders.Pages
             System.Diagnostics.Debug.WriteLine(clients);
             return Page();
         }
-        public class FileUpload
-        {
-            [Required]
-            [Display(Name = "File")]
-            public List<IFormFile> FormFiles { get; set; } // convert to list
-            public string SuccessMessage { get; set; }
-            public string Data { get; set; }
-        }
     }
+
+    ////Try to send files to database upon "Upload" click
+    //public void UploadButton_Click(object sender, EventArgs e)
+    //{
+    //    //Creating object of datatable  
+    //    DataTable tblcsv = new DataTable();
+    //    //creating columns  
+    //    tblcsv.Columns.Add("Name");
+    //    tblcsv.Columns.Add("City");
+    //    tblcsv.Columns.Add("Address");
+    //    tblcsv.Columns.Add("Designation");
+    //    //getting full file path of Uploaded file  
+    //    string CSVFilePath = Path.GetFullPath(FileUpload1.PostedFile.FileName);
+    //    //Reading All text  
+    //    string ReadCSV = File.ReadAllText(CSVFilePath);
+    //    //spliting row after new line  
+    //    foreach (string csvRow in ReadCSV.Split('\n'))
+    //    {
+    //        if (!string.IsNullOrEmpty(csvRow))
+    //        {
+    //            //Adding each row into datatable  
+    //            tblcsv.Rows.Add();
+    //            int count = 0;
+    //            foreach (string FileRec in csvRow.Split(','))
+    //            {
+    //                tblcsv.Rows[tblcsv.Rows.Count - 1][count] = FileRec;
+    //                count++;
+    //            }
+    //        }
+    //    }
+    //    //Calling insert Functions  
+    //    InsertCSVRecords(tblcsv);
+    //}
 
 
     //Client data mapping

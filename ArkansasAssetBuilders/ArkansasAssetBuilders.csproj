@@ -10,11 +10,13 @@
     <Folder Include="Pages\Demographics\" />
     <Folder Include="Pages\TaxYears\" />
     <Folder Include="Pages\ReturnDatas\" />
+    <Folder Include="Pages\UserUploads\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Pages\Clients\" />
     <None Remove="Pages\Demographics\" />
+    <None Remove="Pages\UserUploads\" />
   </ItemGroup>
 
   <ItemGroup>
