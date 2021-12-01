@@ -39,9 +39,6 @@ namespace ArkansasAssetBuilders.Pages
             //set current type for record
             var type = RecordType.None;
 
-            //new datatable to copy data to SQL server
-            DataTable dt = new DataTable("DataTable");
-
             //for each file in the form files
             foreach (var file in fileUpload.FormFiles)
             {
@@ -126,13 +123,6 @@ namespace ArkansasAssetBuilders.Pages
                                     taxYearData.Add(csv.GetRecord<TaxYear>());
                                     break;
                             }
-
-                            var row = dt.NewRow();
-                            foreach (DataColumn column in dt.Columns)
-                            {
-                                row[column.ColumnName] = csv.GetField(column.DataType, column.ColumnName);
-                            }
-                            dt.Rows.Add(row);
 
                         }
                     }
