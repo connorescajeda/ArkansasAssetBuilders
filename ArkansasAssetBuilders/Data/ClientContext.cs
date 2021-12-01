@@ -14,12 +14,12 @@ namespace ArkansasAssetBuilders.Data
         {
         }
 
-        public DbSet<ArkansasAssetBuilders.Models.Client> Client { get; set; }
+        public DbSet<Client> Client { get; set; }
 
-        public DbSet<ArkansasAssetBuilders.Models.Demographic> Demographic { get; set; }
+        public DbSet<Demographic> Demographic { get; set; }
 
-        public DbSet<ArkansasAssetBuilders.Models.ReturnData> ReturnData { get; set; }
+        public DbSet<ReturnData> ReturnData { get; set; }
 
-        public DbSet<ArkansasAssetBuilders.Models.TaxYear> TaxYear { get; set; }
+        public DbSet<TaxYear> TaxYear { get; set; }
     }
 }

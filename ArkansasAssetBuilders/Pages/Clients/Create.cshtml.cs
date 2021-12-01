@@ -12,9 +12,9 @@ namespace ArkansasAssetBuilders.Pages.Clients
 {
     public class CreateModel : PageModel
     {
-        private readonly ArkansasAssetBuilders.Data.ClientContext _context;
+        private readonly ClientContext _context;
 
-        public CreateModel(ArkansasAssetBuilders.Data.ClientContext context)
+        public CreateModel(ClientContext context)
         {
             _context = context;
         }
