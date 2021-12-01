@@ -35,25 +35,6 @@ namespace ArkansasAssetBuilders
 
         }
 
-        ////Function to Insert Records  
-        //private void InsertCSVRecords(DataTable csvdt)
-        //{
-        //    connection();
-        //    //creating object of SqlBulkCopy    
-        //    SqlBulkCopy objbulk = new SqlBulkCopy(con);
-        //    //assigning Destination table name    
-        //    objbulk.DestinationTableName = "Employee";
-        //    //Mapping Table column    
-        //    objbulk.ColumnMappings.Add("Name", "Name");
-        //    objbulk.ColumnMappings.Add("City", "City");
-        //    objbulk.ColumnMappings.Add("Address", "Address");
-        //    objbulk.ColumnMappings.Add("Designation", "Designation");
-        //    //inserting Datatable Records to DataBase    
-        //    con.Open();
-        //    objbulk.WriteToServer(csvdt);
-        //    con.Close();
-        //}
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

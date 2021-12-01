@@ -73,7 +73,7 @@ namespace ArkansasAssetBuilders.Pages
                     {
                         string[] headerRow = csv.HeaderRecord;
 
-                        
+
                         //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
 
                         //add all context mappings to interpret mutliple different header names
@@ -147,39 +147,6 @@ namespace ArkansasAssetBuilders.Pages
             return Page();
         }
     }
-
-    ////Try to send files to database upon "Upload" click
-    //public void UploadButton_Click(object sender, EventArgs e)
-    //{
-    //    //Creating object of datatable  
-    //    DataTable tblcsv = new DataTable();
-    //    //creating columns  
-    //    tblcsv.Columns.Add("Name");
-    //    tblcsv.Columns.Add("City");
-    //    tblcsv.Columns.Add("Address");
-    //    tblcsv.Columns.Add("Designation");
-    //    //getting full file path of Uploaded file  
-    //    string CSVFilePath = Path.GetFullPath(FileUpload1.PostedFile.FileName);
-    //    //Reading All text  
-    //    string ReadCSV = File.ReadAllText(CSVFilePath);
-    //    //spliting row after new line  
-    //    foreach (string csvRow in ReadCSV.Split('\n'))
-    //    {
-    //        if (!string.IsNullOrEmpty(csvRow))
-    //        {
-    //            //Adding each row into datatable  
-    //            tblcsv.Rows.Add();
-    //            int count = 0;
-    //            foreach (string FileRec in csvRow.Split(','))
-    //            {
-    //                tblcsv.Rows[tblcsv.Rows.Count - 1][count] = FileRec;
-    //                count++;
-    //            }
-    //        }
-    //    }
-    //    //Calling insert Functions  
-    //    InsertCSVRecords(tblcsv);
-    //}
 
 
     //Client data mapping
