@@ -60,73 +60,76 @@ namespace ArkansasAssetBuilders.Pages
                 };
 
                 //use streamReader and csvHelper to pull records from file
-                using var stream = new MemoryStream();
-                using var writer = new StreamWriter(stream);
-                using var sreader = new StreamReader(file.OpenReadStream());
-                using (var csv = new CsvReader(sreader, config))
+                using (var stream = new MemoryStream())
+                using (var writer = new StreamWriter(stream))
+                using (var sreader = new StreamReader(file.OpenReadStream()))
                 {
-                    string[] headerRow = csv.HeaderRecord;
-
-                    //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
-
-                    //add all context mappings to interpret mutliple different header names
-                    csv.Context.RegisterClassMap<ClientMap>();
-                    csv.Context.RegisterClassMap<DemoMap>();
-                    csv.Context.RegisterClassMap<DataMap>();
-                    csv.Context.RegisterClassMap<TaxYearMap>();
-
-                    //grab records and add them to class lists
-                    while (csv.Read())
+                    using (var csv = new CsvReader(sreader, config))
                     {
-                        if (csv.GetField(0) == "ID" || csv.GetField(0) == "FirstName"
-                            || csv.GetField(0) == "LastName" || csv.GetField(0) == "DoB"
-                            || csv.GetField(0) == "Last4SS")
-                        {
-                            csv.ReadHeader();
-                            type = RecordType.ClientType;
-                            continue;
-                        }
+                        string[] headerRow = csv.HeaderRecord;
 
-                        if (csv.GetField(0) == "Address" || csv.GetField(0) == "Zip"
-                         || csv.GetField(0) == "County" || csv.GetField(0) == "State"
-                         || csv.GetField(0) == "ID" || csv.GetField(0) == "TaxYear")
-                        {
-                            csv.ReadHeader();
-                            type = RecordType.DemographicType;
-                            continue;
-                        }
+                        //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
 
-                        if (csv.GetField(0) == "FederalReturn" || csv.GetField(0) == "TotalRefund"
-                         || csv.GetField(0) == "EITC" || csv.GetField(0) == "CTC"
-                         || csv.GetField(0) == "Dependents" || csv.GetField(0) == "SurveyScore"
-                         || csv.GetField(0) == "ID" || csv.GetField(0) == "TaxYear")
-                        {
-                            csv.ReadHeader();
-                            type = RecordType.ReturnDataType;
-                            continue;
-                        }
+                        //add all context mappings to interpret mutliple different header names
+                        csv.Context.RegisterClassMap<ClientMap>();
+                        csv.Context.RegisterClassMap<DemoMap>();
+                        csv.Context.RegisterClassMap<DataMap>();
+                        csv.Context.RegisterClassMap<TaxYearMap>();
 
-                        if (csv.GetField(0) == "TaxYearID" || csv.GetField(0) == "ID")
+                        //grab records and add them to class lists
+                        while (csv.Read())
                         {
-                            csv.ReadHeader();
-                            type = RecordType.TaxYearType;
-                            continue;
-                        }
+                            if (csv.GetField(0) == "ID" || csv.GetField(0) == "FirstName"
+                                || csv.GetField(0) == "LastName" || csv.GetField(0) == "DoB"
+                                || csv.GetField(0) == "Last4SS")
+                            {
+                                csv.ReadHeader();
+                                type = RecordType.ClientType;
+                                continue;
+                            }
 
-                        switch (type)
-                        {
-                            case RecordType.ClientType:
-                                clients.Add(csv.GetRecord<Client>());
-                                break;
-                            case RecordType.DemographicType:
-                                demographics.Add(csv.GetRecord<Demographic>());
-                                break;
-                            case RecordType.ReturnDataType:
-                                returnData.Add(csv.GetRecord<ReturnData>());
-                                break;
-                            case RecordType.TaxYearType:
-                                taxYearData.Add(csv.GetRecord<TaxYear>());
-                                break;
+                            if (csv.GetField(0) == "Address" || csv.GetField(0) == "Zip"
+                             || csv.GetField(0) == "County" || csv.GetField(0) == "State"
+                             || csv.GetField(0) == "ID" || csv.GetField(0) == "TaxYear")
+                            {
+                                csv.ReadHeader();
+                                type = RecordType.DemographicType;
+                                continue;
+                            }
+
+                            if (csv.GetField(0) == "FederalReturn" || csv.GetField(0) == "TotalRefund"
+                             || csv.GetField(0) == "EITC" || csv.GetField(0) == "CTC"
+                             || csv.GetField(0) == "Dependents" || csv.GetField(0) == "SurveyScore"
+                             || csv.GetField(0) == "ID" || csv.GetField(0) == "TaxYear")
+                            {
+                                csv.ReadHeader();
+                                type = RecordType.ReturnDataType;
+                                continue;
+                            }
+
+                            if (csv.GetField(0) == "TaxYearID" || csv.GetField(0) == "ID")
+                            {
+                                csv.ReadHeader();
+                                type = RecordType.TaxYearType;
+                                continue;
+                            }
+
+                            switch (type)
+                            {
+                                case RecordType.ClientType:
+                                    clients.Add(csv.GetRecord<Client>());
+                                    break;
+                                case RecordType.DemographicType:
+                                    demographics.Add(csv.GetRecord<Demographic>());
+                                    break;
+                                case RecordType.ReturnDataType:
+                                    returnData.Add(csv.GetRecord<ReturnData>());
+                                    break;
+                                case RecordType.TaxYearType:
+                                    taxYearData.Add(csv.GetRecord<TaxYear>());
+                                    break;
+                            }
+
                         }
                     }
                 }
@@ -136,7 +139,7 @@ namespace ArkansasAssetBuilders.Pages
             ViewData["SuccessMessage"] = fileUpload.FormFiles.Count.ToString() + " file(s) uploaded!";
             Console.WriteLine(clients);
             System.Diagnostics.Debug.WriteLine(clients);
-            var DropDownAndCheckBoxCounter = i;
+            var DropDownAndCheckBoxCount = i;
             return Page();
         }
         public class FileUpload
