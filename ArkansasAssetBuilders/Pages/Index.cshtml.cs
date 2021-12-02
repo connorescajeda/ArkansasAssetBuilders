@@ -23,6 +23,12 @@ namespace ArkansasAssetBuilders.Pages
 {
     public class IndexModel : PageModel
     {
+        private readonly ClientContext _context;
+        public IndexModel(ClientContext context)
+        {
+            _context = context;
+        }
+
         [BindProperty]
         public FileUpload fileUpload { get; set; }
 
@@ -117,6 +123,7 @@ namespace ArkansasAssetBuilders.Pages
                         {
                             case RecordType.ClientType:
                                 clients.Add(csv.GetRecord<Client>());
+                                _context.Client.Add(csv.GetRecord<Client>());
                                 break;
                             case RecordType.DemographicType:
                                 demographics.Add(csv.GetRecord<Demographic>());
