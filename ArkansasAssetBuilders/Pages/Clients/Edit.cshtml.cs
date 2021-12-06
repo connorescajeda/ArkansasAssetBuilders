@@ -56,7 +56,7 @@ namespace ArkansasAssetBuilders.Pages.Clients
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClientExists(Client.ID))
+                if (!ClientExists((int)Client.ID))
                 {
                     return NotFound();
                 }
