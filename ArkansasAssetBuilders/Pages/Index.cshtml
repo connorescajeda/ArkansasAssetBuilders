@@ -49,8 +49,8 @@
 
                 @ViewData["1"]
 
-                <select name="taxyear">
-                    <option value="">Select a Tax Year</option>
+                <select id="taxyear1">
+                    <option value="0">Select a Tax Year</option>
                     <option value="1">2016</option>
                     <option value="2">2017</option>
                     <option value="3">2018</option>
@@ -67,8 +67,8 @@
 
                 @ViewData["2"]
 
-                <select name="taxyear">
-                    <option value="">Select a Tax Year</option>
+                <select id="taxyear2">
+                    <option value="0">Select a Tax Year</option>
                     <option value="1">2016</option>
                     <option value="2">2017</option>
                     <option value="3">2018</option>
@@ -85,8 +85,8 @@
 
                 @ViewData["3"]
 
-                <select name="taxyear">
-                    <option value="">Select a Tax Year</option>
+                <select id="taxyear3">
+                    <option value="0">Select a Tax Year</option>
                     <option value="1">2016</option>
                     <option value="2">2017</option>
                     <option value="3">2018</option>
@@ -102,8 +102,8 @@
 
                 @ViewData["4"]
 
-                <select name="taxyear">
-                    <option value="">Select a Tax Year</option>
+                <select id="taxyear4">
+                    <option value="0">Select a Tax Year</option>
                     <option value="1">2016</option>
                     <option value="2">2017</option>
                     <option value="3">2018</option>
@@ -116,7 +116,9 @@
             </p>
         </div>
         <div class="text-left">
-            <input asp-page-handler="Merge" class="btn btn-primary" type="submit" value="Merge">
+            <input asp-page-handler="Merge" class="btn btn-primary" type="submit" value="Merge" onclick="validate()">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="~/js/"></script>
         </div>
     </div>
 </div>
