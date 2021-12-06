@@ -52,6 +52,9 @@ namespace ArkansasAssetBuilders.Pages
             clientTest.FirstName = "AddFromContextF";
             clientTest.LastName = "AddFromContextL";
             _context.Client.Add(clientTest);
+            _context.SaveChanges();
+
+
 
             //counter
             int i = 1;
