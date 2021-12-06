@@ -45,6 +45,14 @@ namespace ArkansasAssetBuilders.Pages
         public ActionResult OnPostUpload(FileUpload fileUpload)
         {
 
+            Client clientTest = new();
+            clientTest.ID = 2431234;
+            clientTest.Last4SS = 00000000;
+            clientTest.DoB = DateTime.Now;
+            clientTest.FirstName = "AddFromContextF";
+            clientTest.LastName = "AddFromContextL";
+            _context.Client.Add(clientTest);
+
             //counter
             int i = 1;
 
@@ -52,39 +60,43 @@ namespace ArkansasAssetBuilders.Pages
             var type = RecordType.None;
 
             //for each file in the form files
-            foreach (var file in fileUpload.FormFiles)
+            /*foreach (var file in fileUpload.FormFiles)
             {
                 //display filenames
                 ViewData[i.ToString()] = file.FileName;
-                i++;
+                i++;*/
 
-                var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+                /*var config = new CsvConfiguration(CultureInfo.InvariantCulture)
                 {
                     MissingFieldFound = null,
                     HeaderValidated = null,
                     IgnoreBlankLines = true,
-                };
+                };*/
 
                 //use streamReader and csvHelper to pull records from file
-                using var stream = new MemoryStream();
+                /*using var stream = new MemoryStream();
                 using var writer = new StreamWriter(stream);
                 using var sreader = new StreamReader(file.OpenReadStream());
                 using (var csv = new CsvReader(sreader, config))
                 {
-                    string[] headerRow = csv.HeaderRecord;
+                    string[] headerRow = csv.HeaderRecord;*/
 
                     //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
 
                     //add all context mappings to interpret mutliple different header names
-                    csv.Context.RegisterClassMap<ClientMap>();
+                    /*csv.Context.RegisterClassMap<ClientMap>();
                     csv.Context.RegisterClassMap<DemoMap>();
                     csv.Context.RegisterClassMap<DataMap>();
-                    csv.Context.RegisterClassMap<TaxYearMap>();
+                    csv.Context.RegisterClassMap<TaxYearMap>();*/
 
                     //grab records and add them to class lists
-                    while (csv.Read())
-                    {
-                        if (csv.GetField(0) == "ID" || csv.GetField(0) == "FirstName"
+                    //while (csv.Read())
+                    //{
+                     
+                        //_context.Demographic.Add(csv.GetRecord<Demographic>());
+                        //_context.ReturnData.Add(csv.GetRecord<ReturnData>());
+
+                       /*if (csv.GetField(0) == "ID" || csv.GetField(0) == "FirstName"
                             || csv.GetField(0) == "LastName" || csv.GetField(0) == "DoB"
                             || csv.GetField(0) == "Last4SS")
                         {
@@ -123,7 +135,11 @@ namespace ArkansasAssetBuilders.Pages
                         {
                             case RecordType.ClientType:
                                 clients.Add(csv.GetRecord<Client>());
-                                _context.Client.Add(csv.GetRecord<Client>());
+                                Client clientTest = new();
+                                clientTest.ID = 5;
+                                clientTest.Last4SS = 4444;
+                                clientTest.FirstName = "AddFromContextF";
+                                clientTest.LastName = "AddFromContextL";
                                 break;
                             case RecordType.DemographicType:
                                 demographics.Add(csv.GetRecord<Demographic>());
@@ -134,16 +150,16 @@ namespace ArkansasAssetBuilders.Pages
                             case RecordType.TaxYearType:
                                 taxYearData.Add(csv.GetRecord<TaxYear>());
                                 break;
-                        }
+                        }*/
 
-                    }
-                }
-            }
+                    //}
+                //}
+            //}
 
             // Process uploaded files
-            ViewData["SuccessMessage"] = fileUpload.FormFiles.Count.ToString() + " file(s) uploaded!";
-            Console.WriteLine(clients);
-            System.Diagnostics.Debug.WriteLine(clients);
+            //ViewData["SuccessMessage"] = fileUpload.FormFiles.Count.ToString() + " file(s) uploaded!";
+            //Console.WriteLine(clients);
+            //System.Diagnostics.Debug.WriteLine(clients);
             var DropDownAndCheckBoxCount = i;
             return Page();
         }
@@ -154,21 +170,6 @@ namespace ArkansasAssetBuilders.Pages
             public List<IFormFile> FormFiles { get; set; } // convert to list
             public string SuccessMessage { get; set; }
         }
-
-/*        public static class SeedData
-        {
-            public static void Initialize(IServiceProvider serviceProvider)
-            {
-                var context = new ClientContext
-                {
-                    foreach (var client in clients)
-                    {
-                        context.Add(client);
-                    }
-                }
-            }
-
-        }*/
     }
 
 
