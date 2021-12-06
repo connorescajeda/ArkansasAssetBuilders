@@ -10,6 +10,11 @@
 <p>
     <a asp-page="ADD">Add a New Client</a>
 </p>
+<form method="post" asp-page-handler="ExportExcel">
+    <button class="btn btn-sm btn-secondary order-button">Export To Excel</button>
+</form>
+
+
 <table class="table">
     <thead>
         <tr>

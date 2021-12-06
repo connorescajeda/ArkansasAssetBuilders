@@ -1,23 +1,15 @@
 ﻿using ArkansasAssetBuilders.Data;
 using ArkansasAssetBuilders.Models;
-using ArkansasAssetBuilders.Pages.Clients;
 using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Data;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace ArkansasAssetBuilders.Pages
 {
@@ -47,7 +39,7 @@ namespace ArkansasAssetBuilders.Pages
             int i = 1;
 
             //type of Record
-            RecordType type = RecordType.None;
+            //RecordType type = RecordType.None;
 
             //for each file in the form files
             foreach (var file in fileUpload.FormFiles)
@@ -79,43 +71,43 @@ namespace ArkansasAssetBuilders.Pages
                     csv.Context.RegisterClassMap<DemoMap>();
                     csv.Context.RegisterClassMap<DataMap>();
 
+                    //Header bool
+                    bool isHeader = true;
+
                     //grab records and add them to class lists
                     while (csv.Read())
                     {
-                        clients.Add(csv.GetRecord<Client>());
+                        //clients.Add(csv.GetRecord<Client>());
                         //demographics.Add(csv.GetRecord<Demographic>());
                         //returnDatas.Add(csv.GetRecord<ReturnData>());
 
-
-                        //Use multiple mappings to get data into different parts of database
-                        /*if (csv.GetField(0) == "ID" || csv.GetField(0) == "FirstName"
-                            || csv.GetField(0) == "LastName" || csv.GetField(0) == "DoB"
-                            || csv.GetField(0) == "Last4SS")
+                        if (isHeader)
                         {
                             csv.ReadHeader();
-                            type = RecordType.ClientType;
+                            isHeader = false;
                             continue;
                         }
 
-                        if (csv.GetField(0) == "Address" || csv.GetField(0) == "Zip"
-                         || csv.GetField(0) == "County" || csv.GetField(0) == "State"
-                         || csv.GetField(0) == "ID" || csv.GetField(0) == "TaxYear")
+                        if (string.IsNullOrEmpty(csv.GetField(0)))
                         {
-                            csv.ReadHeader();
-                            type = RecordType.DemographicType;
+                            isHeader = true;
                             continue;
                         }
 
-                        if (csv.GetField(0) == "FederalReturn" || csv.GetField(0) == "TotalRefund"
-                         || csv.GetField(0) == "EITC" || csv.GetField(0) == "CTC"
-                         || csv.GetField(0) == "Dependents" || csv.GetField(0) == "SurveyScore"
-                         || csv.GetField(0) == "ID" || csv.GetField(0) == "TaxYear")
+                        switch (csv.HeaderRecord[0])
                         {
-                            csv.ReadHeader();
-                            type = RecordType.ReturnDataType;
-                            continue;
-                        }*/
-
+                            case "clientId":
+                                clients.Add(csv.GetRecord<Client>());
+                                break;
+                            case "DemoId":
+                                demographics.Add(csv.GetRecord<Demographic>());
+                                break;
+                            case "ReturnId":
+                                returnDatas.Add(csv.GetRecord<ReturnData>());
+                                break;
+                            default:
+                                throw new InvalidOperationException("Unknown record type.");
+                        }
                     }
                 }
             }

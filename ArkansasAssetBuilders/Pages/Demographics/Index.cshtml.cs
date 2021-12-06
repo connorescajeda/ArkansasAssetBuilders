@@ -26,4 +26,5 @@ namespace ArkansasAssetBuilders.Pages.Demographics
             Demographic = await _context.Demographic.ToListAsync();
         }
     }
+
 }

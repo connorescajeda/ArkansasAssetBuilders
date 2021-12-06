@@ -12,8 +12,12 @@
 
 <div class="text-left">
     <h3 class="display-4">Step 1: Upload</h3>
-    <p>Upload any files that need to be merged here.</p>
-    <p>Currently, you can upload up to four files. Once finished, move to the next step to chose which files need to be merged </p>
+</div>
+
+<div class="text-center">
+    <p>Upload up to 4 files that need to be merged here.</p>
+    <p>Then, move to the next step to choose which files need to be merged.</p>
+</div>
 
     <div class="text-center">
         <form enctype="multipart/form-data" method="post">
@@ -33,126 +37,92 @@
             }
         </form>
     </div>
-</div>
 
 <div class="text-left">
     <h4 class="display-4">Step 2: Merge</h4>
-    <p> Assign each file a tax year and select the files to be merged.  </p>
-    <p>Unselected file won't be merged! </p>
+</div>
 
-    <div class="text-left">
-        <h4>Files:</h4>
-        <div class="text-left">
-
-            <p>
-                <input type="checkbox" id="S1" name="selector1" />
-
-                @ViewData["1"]
-
-                <select id="taxyear1">
-                    <option value="0">Select a Tax Year</option>
-                    <option value="1">2016</option>
-                    <option value="2">2017</option>
-                    <option value="3">2018</option>
-                    <option value="4">2019</option>
-                    <option value="5">2020</option>
-                    <option value="6">2021</option>
-                    <option value="7">2022</option>
-                    <option value="8">2023</option>
-                </select>
-            </p>
-
-            <p>
-                <input type="checkbox" id="S2" name="selector2" />
-
-                @ViewData["2"]
-
-                <select id="taxyear2">
-                    <option value="0">Select a Tax Year</option>
-                    <option value="1">2016</option>
-                    <option value="2">2017</option>
-                    <option value="3">2018</option>
-                    <option value="4">2019</option>
-                    <option value="5">2020</option>
-                    <option value="6">2021</option>
-                    <option value="7">2022</option>
-                    <option value="8">2023</option>
-                </select>
-            </p>
-
-            <p>
-                <input type="checkbox" id="S3" name="selector3" />
-
-                @ViewData["3"]
-
-                <select id="taxyear3">
-                    <option value="0">Select a Tax Year</option>
-                    <option value="1">2016</option>
-                    <option value="2">2017</option>
-                    <option value="3">2018</option>
-                    <option value="4">2019</option>
-                    <option value="5">2020</option>
-                    <option value="6">2021</option>
-                    <option value="7">2022</option>
-                    <option value="8">2023</option>
-                </select>
-            </p>
-            <p>
-                <input type="checkbox" id="S4" name="selector4" />
-
-                @ViewData["4"]
-
-                <select id="taxyear4">
-                    <option value="0">Select a Tax Year</option>
-                    <option value="1">2016</option>
-                    <option value="2">2017</option>
-                    <option value="3">2018</option>
-                    <option value="4">2019</option>
-                    <option value="5">2020</option>
-                    <option value="6">2021</option>
-                    <option value="7">2022</option>
-                    <option value="8">2023</option>
-                </select>
-            </p>
-        </div>
-        <div class="text-left">
-            <input asp-page-handler="Merge" class="btn btn-primary" type="submit" value="Merge" onclick="validate()">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="~/js/"></script>
-        </div>
-    </div>
+<div class="text-center">
+    <p>Assign each file a tax year and select the files you want to merged.</p>
+    <p>Unselected files won't be merged!</p>
 </div>
 
 <div class="text-left">
-    <h3 class="display-4">Step 3: Export Report</h3>
-    <form method="post" asp-page-handler="ExportExcel">
-        <button class="btn btn-sm btn-secondary order-button ">Export To Excel</button>
-    </form>
+    <h4>Files:</h4>
+    <div class="text-left">
 
-    @*<table class="table table-sm table-bordered table-condensed">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Client[0].Buname)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BusinessUnits[0].Bucode)
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.BusinessUnits)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Buname)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Bucode)
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>*@
+        <p>
+            <input type="checkbox" id="S1" name="selector1" />
 
+            @ViewData["1"]
+
+            <select id="taxyear1">
+                <option value="0">Select a Tax Year</option>
+                <option value="1">2016</option>
+                <option value="2">2017</option>
+                <option value="3">2018</option>
+                <option value="4">2019</option>
+                <option value="5">2020</option>
+                <option value="6">2021</option>
+                <option value="7">2022</option>
+                <option value="8">2023</option>
+            </select>
+        </p>
+
+        <p>
+            <input type="checkbox" id="S2" name="selector2" />
+
+            @ViewData["2"]
+
+            <select id="taxyear2">
+                <option value="0">Select a Tax Year</option>
+                <option value="1">2016</option>
+                <option value="2">2017</option>
+                <option value="3">2018</option>
+                <option value="4">2019</option>
+                <option value="5">2020</option>
+                <option value="6">2021</option>
+                <option value="7">2022</option>
+                <option value="8">2023</option>
+            </select>
+        </p>
+
+        <p>
+            <input type="checkbox" id="S3" name="selector3" />
+
+            @ViewData["3"]
+
+            <select id="taxyear3">
+                <option value="0">Select a Tax Year</option>
+                <option value="1">2016</option>
+                <option value="2">2017</option>
+                <option value="3">2018</option>
+                <option value="4">2019</option>
+                <option value="5">2020</option>
+                <option value="6">2021</option>
+                <option value="7">2022</option>
+                <option value="8">2023</option>
+            </select>
+        </p>
+        <p>
+            <input type="checkbox" id="S4" name="selector4" />
+
+            @ViewData["4"]
+
+            <select id="taxyear4">
+                <option value="0">Select a Tax Year</option>
+                <option value="1">2016</option>
+                <option value="2">2017</option>
+                <option value="3">2018</option>
+                <option value="4">2019</option>
+                <option value="5">2020</option>
+                <option value="6">2021</option>
+                <option value="7">2022</option>
+                <option value="8">2023</option>
+            </select>
+        </p>
+    </div>
+    <div class="text-left">
+        <input asp-page-handler="Merge" class="btn btn-primary" type="submit" value="Merge" onclick="validate()">
+    </div>
 </div>
