@@ -18,3 +18,7 @@ ArkansasAssetBuilders/.vs/ArkansasAssetBuilders/v16/
 ArkansasAssetBuilders/.vs/ArkansasAssetBuilders/xs/project-cache/
 
 ArkansasAssetBuilders/.vs/ArkansasAssetBuilders/xs/
+
+*.db-shm
+
+*.db-wal
