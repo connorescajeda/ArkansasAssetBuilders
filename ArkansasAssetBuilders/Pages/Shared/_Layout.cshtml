@@ -10,36 +10,59 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="container">
-        <div class="row">
-            <h1 class="col-sm-4">
-                <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/Images/aab-logo-web-textonly.png" width="350" height="70" alt="Arkansas Asset Builders" /></a>
-            </h1>
-            <nav class="col-sm-8 text-left"   >
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="nav">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand">Arkansas Asset Builders</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="/Credits">Credits<span class="caret"></span></a>
+
+
+
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Clients/Index">Clients</a>
+
+
+                            <a class="nav-link" href="/Taxyears">Clients</a>
                         </li>
+
+
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Demographics/Index">Demographics</a>
+
+
+                            <a class="nav-link" href="/Clients">Taxyears</a>
+
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/ReturnDatas/Index">Return Data</a>
+
+
+                            <a class="nav-link" href="/ReturnDatas">Return Data</a>
+
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/TaxYears/Index">Tax Years</a>
+
+
+                            <a class="nav-link" href="/Demographics">Demographic</a>
+
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Credits">Credits</a>
-                        </li>
+
+
+
                     </ul>
                 </div>
-                
-            </nav>
-        </div>
+        </nav>
+
     </header>
+
     
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

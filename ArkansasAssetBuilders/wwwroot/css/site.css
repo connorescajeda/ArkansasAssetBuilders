@@ -6,9 +6,10 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 200;
+    padding: 15px 0;
 }
 header {
-    padding: 20px 0;
+    padding: 0px 0;
 }
 a.navbar-brand {
     white-space: normal;
@@ -29,7 +30,7 @@ a {
     background-image: url('../Images/aab.jpg');
     background-size: cover;
     color: #ffffff;
-    height: 600px;
+    height: 400px;
     text-shadow: 0.25px 0.25px 0.25px #000000;
     margin-bottom: 2rem;
     background-color: #e9ecef;
@@ -58,29 +59,29 @@ a {
 
 
 
-header h1 {
+body h1 {
     font-weight: 700;
     font-size: 30px;
     margin: 0;
 }
 
-header h2 {
+body h2 {
     font-weight: 500;
     font-size: 30px;
     margin: 0;
 }
 
-header h3 {
+body h3 {
     font-weight: 300;
     font-size: 20px;
     margin: 0;
 }
-header h4 {
+body h4 {
     font-weight: 200;
     font-size: 15px;
     margin: 0;
 }
-header p {
+body p {
     padding: 0 20px;
     margin: 0;
 }
