@@ -177,7 +177,7 @@ namespace ArkansasAssetBuilders.Pages
         public DemoMap()
         {
             Map(m => m.ID).Name("ID", "Id");
-            Map(m => m.TaxYear).Name("Tax Year", "TaxYear");
+            Map(m => m.TaxYearID).Name("Tax Year", "TaxYear");
             Map(m => m.Address).Name("Street Address", "Address");
             Map(m => m.Zip).Name("ZIP", "Zip", "zip", "Postal Code");
             Map(m => m.County).Name("County", "Location");
@@ -191,7 +191,7 @@ namespace ArkansasAssetBuilders.Pages
         public DataMap()
         {
             Map(m => m.ID).Name("ID", "Id");
-            Map(m => m.TaxYear).Name("TaxYear", "Tax Year");
+            Map(m => m.TaxYearID).Name("TaxYear", "Tax Year");
             Map(m => m.FederalReturn).Name("FedReturn", "Federal");
             Map(m => m.TotalRefund).Name("Total Refund", "TotalRefund");
             Map(m => m.EITC).Name("EITC");

@@ -11,6 +11,9 @@ body {
 header {
     padding: 0px 0;
 }
+navbar {
+
+}
 a.navbar-brand {
     white-space: normal;
     font-family: 'Yellowtail', cursive;
