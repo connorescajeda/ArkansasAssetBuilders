@@ -20,11 +20,35 @@ namespace ArkansasAssetBuilders.Pages.Clients
         {
             _context = context;
         }
-
+        public string NameSort { get; set; }
+        public string AgeSort { get; set; }
+        public string CurrentFilter { get; set; }
+        public string CurrentSort { get; set; }
         public IList<Client> Client { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            AgeSort = sortOrder == "Date" ? "date_desc" : "Date";
+
+            IQueryable<Client> studentsIQ = from s in _context.Client
+                                             select s;
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    studentsIQ = studentsIQ.OrderByDescending(s => s.LastName);
+                    break;
+                case "Age":
+                    studentsIQ = studentsIQ.OrderBy(s => s.DoB);
+                    break;
+                case "date_desc":
+                    studentsIQ = studentsIQ.OrderByDescending(s => s.DoB);
+                    break;
+                default:
+                    studentsIQ = studentsIQ.OrderBy(s => s.LastName);
+                    break;
+            }
             Client = await _context.Client.ToListAsync();
         }
 
