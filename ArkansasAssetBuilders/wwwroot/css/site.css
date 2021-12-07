@@ -11,9 +11,11 @@ body {
 header {
     padding: 0px 0;
 }
-navbar {
 
+.navbar navbar-expand-lg navbar-dark bg-primary, .collapse navbar-collapse {
+    padding: 0px;
 }
+
 a.navbar-brand {
     white-space: normal;
     font-family: 'Yellowtail', cursive;
@@ -31,9 +33,9 @@ a {
     display: flex;
     align-items: center;
     background-image: url('../Images/aab-logo-web-textonly.png');
-    background-size: cover;
+    background-size: 100% 100%;
     color: #ffffff;
-    height: 400px;
+    height: 300px;
     text-shadow: 0.25px 0.25px 0.25px #000000;
     margin-bottom: 2rem;
     background-color: #e9ecef;
@@ -83,6 +85,14 @@ header nav {
   border-color: #1861ac;
 }
 
+.text-center, .text-left {
+    padding: 15px;
+}
+
+#export {
+    padding: 10px;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -118,8 +128,9 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: 'Abel', sans-serif;
 }
 .footer {
   position: absolute;

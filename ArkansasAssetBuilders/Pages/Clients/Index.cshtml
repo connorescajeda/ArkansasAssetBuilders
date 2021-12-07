@@ -7,12 +7,13 @@
 
 <h1>Clients</h1>
 
+<form method="post" asp-page-handler="ExportExcel" id="export">
+    <button class="btn btn-sm btn-secondary order-button">Export To Excel</button>
+</form>
+
 <p>
     <a asp-page="ADD">Add a New Client</a>
 </p>
-<form method="post" asp-page-handler="ExportExcel">
-    <button class="btn btn-sm btn-secondary order-button">Export To Excel</button>
-</form>
 
 <form asp-page="./Index" method="get">
     <div class="form-actions no-color">
