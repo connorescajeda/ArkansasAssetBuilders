@@ -12,31 +12,51 @@
 </form>
 
 <p>
-    <a asp-page="ADD">Add New Client Demographics</a>
+    <a asp-page="Create">Add New Client Demographics</a>
 </p>
+
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by State, County, or Tax Year ID:
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-page="./Index">Back to full List</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Demographic[0].TaxYearID)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.TaxYearIDSort">
+                    @Html.DisplayNameFor(model => model.Demographics[0].TaxYearID)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Demographic[0].Address)
+                @Html.DisplayNameFor(model => model.Demographics[0].Address)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Demographic[0].Zip)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.ZipSort">
+                    @Html.DisplayNameFor(model => model.Demographics[0].Zip)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Demographic[0].County)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CountySort">
+                    @Html.DisplayNameFor(model => model.Demographics[0].County)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Demographic[0].State)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.StateSort">
+                    @Html.DisplayNameFor(model => model.Demographics[0].State)
+                </a>
             </th>
+            
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Demographic) {
+@foreach (var item in Model.Demographics) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.TaxYearID)

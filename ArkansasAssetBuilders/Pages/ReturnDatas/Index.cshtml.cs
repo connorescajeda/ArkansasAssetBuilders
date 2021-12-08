@@ -20,12 +20,74 @@ namespace ArkansasAssetBuilders.Pages.ReturnDatas
         {
             _context = context;
         }
+        
+        public string TaxYearIDSort { get; set; }
+        public string FederalReturnSort { get; set; } //bool
+        public string TotalRefundSort { get; set; }
+        public string EITCSort { get; set; }
+        public string CTCSort { get; set; }
+        public string DependentsSort { get; set; }
+        public string SurveyScoreSort { get; set; }
+        public string CurrentFilter { get; set; }
+        public string CurrentSort { get; set; }
 
-        public IList<ReturnData> ReturnData { get;set; }
+        public IList<ReturnData> ReturnDatas { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder, string searchString)
         {
-            ReturnData = await _context.ReturnData.ToListAsync();
+            // using System;
+            TaxYearIDSort = String.IsNullOrEmpty(sortOrder) ? "year_desc" : "";
+            FederalReturnSort = String.IsNullOrEmpty(sortOrder) ? "fed_desc" : "";
+            EITCSort = sortOrder == "eitc" ? "eitc_desc" : "eitc";
+            CTCSort = String.IsNullOrEmpty(sortOrder) ? "ctc_desc" : "";
+            DependentsSort = sortOrder == "dependents" ? "dependents_desc" : "dependents";
+            SurveyScoreSort = sortOrder == "survey" ? "survey_desc" : "survey";
+
+            CurrentFilter = searchString;
+
+            IQueryable<ReturnData> returndatasIQ = from s in _context.ReturnData
+                                             select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                returndatasIQ = returndatasIQ.Where(s => s.TaxYearID.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "year_desc":
+                    returndatasIQ = returndatasIQ.OrderByDescending(s => s.TaxYearID);
+                    break;
+                case "fed_desc":
+                    returndatasIQ = returndatasIQ.OrderByDescending(s => s.FederalReturn);
+                    break;
+                case "eitc_desc":
+                    returndatasIQ = returndatasIQ.OrderByDescending(s => s.EITC);
+                    break;
+                case "eitc":
+                    returndatasIQ = returndatasIQ.OrderBy(s => s.EITC);
+                    break;
+                case "ctc_desc":
+                    returndatasIQ = returndatasIQ.OrderByDescending(s => s.CTC);
+                    break;
+                case "dependents_desc":
+                    returndatasIQ = returndatasIQ.OrderByDescending(s => s.Dependents);
+                    break;
+                case "dependents":
+                    returndatasIQ = returndatasIQ.OrderBy(s => s.Dependents);
+                    break;
+                case "survey_desc":
+                    returndatasIQ = returndatasIQ.OrderByDescending(s => s.SurveyScore);
+                    break;
+                case "survey":
+                    returndatasIQ = returndatasIQ.OrderBy(s => s.SurveyScore);
+                    break;
+                default:
+                    returndatasIQ = returndatasIQ.OrderBy(s => s.TaxYearID);
+                    break;
+            }
+            ReturnDatas = await returndatasIQ.AsNoTracking().ToListAsync();
+
         }
 
         public async Task<IActionResult> OnPostExportExcelAsync()

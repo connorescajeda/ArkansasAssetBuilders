@@ -20,12 +20,59 @@ namespace ArkansasAssetBuilders.Pages.Demographics
         {
             _context = context;
         }
+        //public string IDSort { get; set; }
+        public string TaxYearIDSort { get; set; }
+        public string AddressSort { get; set; }
+        public string ZipSort { get; set; }
+        public string CountySort { get; set; }
+        public string StateSort { get; set; }
+        public string CurrentFilter { get; set; }
+        public string CurrentSort { get; set; }
 
-        public IList<Demographic> Demographic { get;set; }
+        public IList<Demographic> Demographics { get;set; }
 
-        public async Task OnGetAsync()
-        {
-            Demographic = await _context.Demographic.ToListAsync();
+        public async Task OnGetAsync(string sortOrder, string searchString)
+        {      // using System;
+            //IDSort = sortOrder == "ID" ? "ID_desc" : "ID";
+            TaxYearIDSort = String.IsNullOrEmpty(sortOrder) ? "year_desc" : "";
+            //AddressSort = String.IsNullOrEmpty(sortOrder) ? "address_desc" : "";
+            ZipSort = String.IsNullOrEmpty(sortOrder) ? "zip_desc" : "";
+            CountySort = sortOrder == "county" ? "county_desc" : "county";
+            StateSort = String.IsNullOrEmpty(sortOrder) ? "state_desc" : "";
+
+            CurrentFilter = searchString;
+            IQueryable<Demographic> demographicsIQ = from s in _context.Demographic
+                                             select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                demographicsIQ = demographicsIQ.Where(s => s.TaxYearID.Contains(searchString) 
+                || s.County.Contains(searchString) || s.State.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "zip_desc":
+                    demographicsIQ = demographicsIQ.OrderByDescending(s => s.Zip);
+                    break;
+                case "county_desc":
+                    demographicsIQ = demographicsIQ.OrderByDescending(s => s.County);
+                    break;
+                case "county":
+                    demographicsIQ = demographicsIQ.OrderBy(s => s.County);
+                    break;
+                case "state_desc":
+                    demographicsIQ = demographicsIQ.OrderByDescending(s => s.State);
+                    break;
+                case "state":
+                    demographicsIQ = demographicsIQ.OrderBy(s => s.State);
+                    break;
+                case "year_desc":
+                    demographicsIQ = demographicsIQ.OrderByDescending(s => s.TaxYearID);
+                    break;
+                default:
+                    demographicsIQ = demographicsIQ.OrderBy(s => s.TaxYearID);
+                    break;
+            }
+            Demographics = await demographicsIQ.AsNoTracking().ToListAsync();
         }
 
         public async Task<IActionResult> OnPostExportExcelAsync()

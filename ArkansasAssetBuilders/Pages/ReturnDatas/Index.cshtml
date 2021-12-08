@@ -12,37 +12,62 @@
 </form>
 
 <p>
-    <a asp-page="ADD">Create New Client Return Data</a>
+    <a asp-page="Create">Create New Client Return Data</a>
 </p>
+
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Search by Tax Year:
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-page="./Index">Back to full List</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ReturnData[0].TaxYearID)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.TaxYearIDSort">
+                    @Html.DisplayNameFor(model => model.ReturnDatas[0].TaxYearID)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReturnData[0].FederalReturn)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.FederalReturnSort">
+                    @Html.DisplayNameFor(model => model.ReturnDatas[0].FederalReturn)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReturnData[0].TotalRefund)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.TotalRefundSort">
+                    @Html.DisplayNameFor(model => model.ReturnDatas[0].TotalRefund)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReturnData[0].EITC)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.EITCSort">
+                    @Html.DisplayNameFor(model => model.ReturnDatas[0].EITC)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReturnData[0].CTC)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CTCSort">
+                    @Html.DisplayNameFor(model => model.ReturnDatas[0].CTC)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReturnData[0].Dependents)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DependentsSort">
+                    @Html.DisplayNameFor(model => model.ReturnDatas[0].Dependents)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReturnData[0].SurveyScore)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.SurveyScoreSort">
+                    @Html.DisplayNameFor(model => model.ReturnDatas[0].SurveyScore)
+                </a>
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.ReturnData) {
+@foreach (var item in Model.ReturnDatas) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.TaxYearID)
