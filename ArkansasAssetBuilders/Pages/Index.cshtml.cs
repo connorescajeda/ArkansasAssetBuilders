@@ -57,46 +57,27 @@ namespace ArkansasAssetBuilders.Pages
                 };
 
                 //use streamReader and csvHelper to pull records from file
-                using var stream = new MemoryStream();
-                using var writer = new StreamWriter(stream);
                 using var sreader = new StreamReader(file.OpenReadStream());
                 using (var csv = new CsvReader(sreader, config))
                 {
+                    //read in the file and header row
+                    csv.Read();
+                    csv.ReadHeader();
                     string[] headerRow = csv.HeaderRecord;
-
-                    //WRITE A NEW COLUMN TO THE CSV FILE FOR THE CLIENT ID PRIMARY KEY
 
                     //add all context mappings to interpret mutliple different header names
                     csv.Context.RegisterClassMap<ClientMap>();
                     csv.Context.RegisterClassMap<DemoMap>();
                     csv.Context.RegisterClassMap<DataMap>();
 
-                    //Header bool
-                    bool isHeader = true;
-
+                    //ONLY WORKS WITH 3 TEST FILES CURRENTLY
                     //grab records and add them to class lists
                     while (csv.Read())
                     {
-                        //clients.Add(csv.GetRecord<Client>());
-                        //demographics.Add(csv.GetRecord<Demographic>());
-                        //returnDatas.Add(csv.GetRecord<ReturnData>());
-
-                        if (isHeader)
-                        {
-                            csv.ReadHeader();
-                            isHeader = false;
-                            continue;
-                        }
-
-                        if (string.IsNullOrEmpty(csv.GetField(0)))
-                        {
-                            isHeader = true;
-                            continue;
-                        }
-
+                        //checks header in first column (from left) and matches to cases to determine which Class to map to
                         switch (csv.HeaderRecord[0])
                         {
-                            case "clientId":
+                            case "ClientId":
                                 clients.Add(csv.GetRecord<Client>());
                                 break;
                             case "DemoId":
@@ -106,28 +87,29 @@ namespace ArkansasAssetBuilders.Pages
                                 returnDatas.Add(csv.GetRecord<ReturnData>());
                                 break;
                             default:
-                                throw new InvalidOperationException("Unknown record type.");
+                                throw new InvalidOperationException("Unknown record type");
                         }
                     }
+
+                    //close streamReader
+                    sreader.Close();
+
                 }
             }
 
             foreach (var client in clients)
             {
                 _context.Client.Add(client);
-                _context.SaveChanges();
             }
 
             foreach (var demographic in demographics)
             {
                 _context.Demographic.Add(demographic);
-                _context.SaveChanges();
             }
 
             foreach (var returnData in returnDatas)
             {
                 _context.ReturnData.Add(returnData);
-                _context.SaveChanges();
             }
 
             //Save database changes
@@ -135,9 +117,10 @@ namespace ArkansasAssetBuilders.Pages
 
             //Process uploaded files
             ViewData["SuccessMessage"] = fileUpload.FormFiles.Count.ToString() + " file(s) uploaded!";
-            var DropDownAndCheckBoxCount = i;
             return Page();
         }
+
+        //file Upload Class
         public class FileUpload
         {
             [Required]
@@ -153,7 +136,7 @@ namespace ArkansasAssetBuilders.Pages
     {
         public ClientMap()
         {
-            Map(m => m.ID).Name("ID", "Id");
+            Map(m => m.ID).Name("ID", "Id", "ClientId");
             Map(m => m.FirstName).Name("FirstName", "First Name");
             Map(m => m.LastName).Name("LastName", "Last Name");
             Map(m => m.DoB).Name("DateOfBirth", "DoB", "Date of Birth");
@@ -161,24 +144,14 @@ namespace ArkansasAssetBuilders.Pages
         }
     }
 
-    //enum to reference the different mappings for the csv
-    public enum RecordType
-    {
-        None = 0,
-        ClientType,
-        DemographicType,
-        ReturnDataType,
-        TaxYearType
-    }
-
     //Demographic data mapping
     public sealed class DemoMap : ClassMap<Demographic>
     {
         public DemoMap()
         {
-            Map(m => m.ID).Name("ID", "Id");
+            Map(m => m.ID).Name("ID", "Id", "DemoId");
             Map(m => m.TaxYearID).Name("Tax Year", "TaxYear");
-            Map(m => m.Address).Name("Street Address", "Address");
+            Map(m => m.Address).Name("Street Address", "Address", "ADDRESS");
             Map(m => m.Zip).Name("ZIP", "Zip", "zip", "Postal Code");
             Map(m => m.County).Name("County", "Location");
             Map(m => m.State).Name("State", "ST");
@@ -190,12 +163,12 @@ namespace ArkansasAssetBuilders.Pages
     {
         public DataMap()
         {
-            Map(m => m.ID).Name("ID", "Id");
+            Map(m => m.ID).Name("ID", "Id", "ReturnId");
             Map(m => m.TaxYearID).Name("TaxYear", "Tax Year");
             Map(m => m.FederalReturn).Name("FedReturn", "Federal");
-            Map(m => m.TotalRefund).Name("Total Refund", "TotalRefund");
-            Map(m => m.EITC).Name("EITC");
-            Map(m => m.CTC).Name("CTC");
+            Map(m => m.TotalRefund).Name("Total Refund", "TotalRefund", "Refund");
+            Map(m => m.EITC).Name("EITC", "State EIC");
+            Map(m => m.CTC).Name("CTC", "State Withholding");
             Map(m => m.Dependents).Name("dependents");
             Map(m => m.SurveyScore).Name("Questions");
         }
