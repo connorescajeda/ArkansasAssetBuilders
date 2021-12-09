@@ -35,7 +35,6 @@ namespace ArkansasAssetBuilders.Pages.Demographics
         {      // using System;
             //IDSort = sortOrder == "ID" ? "ID_desc" : "ID";
             TaxYearIDSort = sortOrder == "year" ? "year_desc" : "year";
-            //AddressSort = String.IsNullOrEmpty(sortOrder) ? "address_desc" : "";
             ZipSort = sortOrder == "zip" ? "zip_desc" : "zip";
             CountySort = sortOrder == "county" ? "county_desc" : "county";
             StateSort = sortOrder == "state" ? "state_desc" : "state";
@@ -46,7 +45,7 @@ namespace ArkansasAssetBuilders.Pages.Demographics
             if (!String.IsNullOrEmpty(searchString))
             {
                 demographicsIQ = demographicsIQ.Where(s => s.TaxYearID.Contains(searchString) 
-                || s.County.Contains(searchString) || s.State.Contains(searchString));
+                || s.County.Contains(searchString) || s.State.Contains(searchString)|| s.Zip.Contains(searchString));
             }
             switch (sortOrder)
             {

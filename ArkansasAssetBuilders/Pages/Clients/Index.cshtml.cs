@@ -24,15 +24,24 @@ namespace ArkansasAssetBuilders.Pages.Clients
         public string AgeSort { get; set; }
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
-        public IList<Client> Client { get;set; }
 
-        public async Task OnGetAsync(string sortOrder)
+        public IList<Client> Clients { get; set; }
+
+        public async Task OnGetAsync(string sortOrder, string searchString)
         {
             NameSort = sortOrder == "name" ? "name_desc" : "name";
             AgeSort = sortOrder == "Age" ? "age_desc" : "Age";
+            
+            CurrentFilter = searchString;
+
 
             IQueryable<Client> clientsIQ = from s in _context.Client
                                              select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                clientsIQ = clientsIQ.Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper()) || s.FirstName.ToUpper().Contains(searchString.ToUpper()));
+            }
 
             switch (sortOrder)
             {
@@ -52,7 +61,7 @@ namespace ArkansasAssetBuilders.Pages.Clients
                     clientsIQ = clientsIQ.OrderBy(s => s.LastName);
                     break;
             }
-            Client = await clientsIQ.AsNoTracking().ToListAsync();
+            Clients = await clientsIQ.AsNoTracking().ToListAsync();
         }
 
         public async Task<IActionResult> OnPostExportExcelAsync()

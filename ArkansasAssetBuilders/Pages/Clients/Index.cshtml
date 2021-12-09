@@ -12,7 +12,7 @@
 </form>
 
 <p>
-    <a asp-page="ADD">Add a New Client</a>
+    <a asp-page="Create">Add a New Client</a>
 </p>
 
 <form asp-page="./Index" method="get">
@@ -26,31 +26,30 @@
     </div>
 </form>
 
-
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].FirstName)
+                @Html.DisplayNameFor(model => model.Clients[0].FirstName)
             </th>
             <th>
                 <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
-                    @Html.DisplayNameFor(model => model.Client[0].LastName)
+                    @Html.DisplayNameFor(model => model.Clients[0].LastName)
                 </a>
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].DoB)
+                @Html.DisplayNameFor(model => model.Clients[0].DoB)
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].Last4SS)
+                @Html.DisplayNameFor(model => model.Clients[0].Last4SS)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Client) {
+@foreach (var item in Model.Clients) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
