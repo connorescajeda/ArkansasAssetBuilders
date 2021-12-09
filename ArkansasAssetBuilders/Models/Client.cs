@@ -8,8 +8,8 @@ namespace ArkansasAssetBuilders.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
-        public DateTime DoB { get; set; }
+        //[DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        public string DoB { get; set; }
         public int? Last4SS { get; set; }
 
     }
