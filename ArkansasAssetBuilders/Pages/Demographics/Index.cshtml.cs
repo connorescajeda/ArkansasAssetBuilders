@@ -34,11 +34,11 @@ namespace ArkansasAssetBuilders.Pages.Demographics
         public async Task OnGetAsync(string sortOrder, string searchString)
         {      // using System;
             //IDSort = sortOrder == "ID" ? "ID_desc" : "ID";
-            TaxYearIDSort = String.IsNullOrEmpty(sortOrder) ? "year_desc" : "";
+            TaxYearIDSort = sortOrder == "year" ? "year_desc" : "year";
             //AddressSort = String.IsNullOrEmpty(sortOrder) ? "address_desc" : "";
-            ZipSort = String.IsNullOrEmpty(sortOrder) ? "zip_desc" : "";
+            ZipSort = sortOrder == "zip" ? "zip_desc" : "zip";
             CountySort = sortOrder == "county" ? "county_desc" : "county";
-            StateSort = String.IsNullOrEmpty(sortOrder) ? "state_desc" : "";
+            StateSort = sortOrder == "state" ? "state_desc" : "state";
 
             CurrentFilter = searchString;
             IQueryable<Demographic> demographicsIQ = from s in _context.Demographic
@@ -52,6 +52,9 @@ namespace ArkansasAssetBuilders.Pages.Demographics
             {
                 case "zip_desc":
                     demographicsIQ = demographicsIQ.OrderByDescending(s => s.Zip);
+                    break;
+                case "zip":
+                    demographicsIQ = demographicsIQ.OrderBy(s => s.Zip);
                     break;
                 case "county_desc":
                     demographicsIQ = demographicsIQ.OrderByDescending(s => s.County);
@@ -67,6 +70,9 @@ namespace ArkansasAssetBuilders.Pages.Demographics
                     break;
                 case "year_desc":
                     demographicsIQ = demographicsIQ.OrderByDescending(s => s.TaxYearID);
+                    break;
+                case "year":
+                    demographicsIQ = demographicsIQ.OrderBy(s => s.TaxYearID);
                     break;
                 default:
                     demographicsIQ = demographicsIQ.OrderBy(s => s.TaxYearID);

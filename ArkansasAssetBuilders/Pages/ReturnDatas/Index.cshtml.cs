@@ -36,10 +36,10 @@ namespace ArkansasAssetBuilders.Pages.ReturnDatas
         public async Task OnGetAsync(string sortOrder, string searchString)
         {
             // using System;
-            TaxYearIDSort = String.IsNullOrEmpty(sortOrder) ? "year_desc" : "";
-            FederalReturnSort = String.IsNullOrEmpty(sortOrder) ? "fed_desc" : "";
+            TaxYearIDSort = sortOrder == "year" ? "year_desc" : "year";
+            FederalReturnSort = sortOrder == "fed" ? "fed_desc" : "fed";
             EITCSort = sortOrder == "eitc" ? "eitc_desc" : "eitc";
-            CTCSort = String.IsNullOrEmpty(sortOrder) ? "ctc_desc" : "";
+            CTCSort = sortOrder == "ctc" ? "ctc_desc" : "ctc";
             DependentsSort = sortOrder == "dependents" ? "dependents_desc" : "dependents";
             SurveyScoreSort = sortOrder == "survey" ? "survey_desc" : "survey";
 
@@ -58,8 +58,14 @@ namespace ArkansasAssetBuilders.Pages.ReturnDatas
                 case "year_desc":
                     returndatasIQ = returndatasIQ.OrderByDescending(s => s.TaxYearID);
                     break;
+                case "year":
+                    returndatasIQ = returndatasIQ.OrderBy(s => s.TaxYearID);
+                    break;
                 case "fed_desc":
                     returndatasIQ = returndatasIQ.OrderByDescending(s => s.FederalReturn);
+                    break;
+                case "fed":
+                    returndatasIQ = returndatasIQ.OrderBy(s => s.FederalReturn);
                     break;
                 case "eitc_desc":
                     returndatasIQ = returndatasIQ.OrderByDescending(s => s.EITC);
@@ -69,6 +75,9 @@ namespace ArkansasAssetBuilders.Pages.ReturnDatas
                     break;
                 case "ctc_desc":
                     returndatasIQ = returndatasIQ.OrderByDescending(s => s.CTC);
+                    break;
+                case "ctc":
+                    returndatasIQ = returndatasIQ.OrderBy(s => s.CTC);
                     break;
                 case "dependents_desc":
                     returndatasIQ = returndatasIQ.OrderByDescending(s => s.Dependents);

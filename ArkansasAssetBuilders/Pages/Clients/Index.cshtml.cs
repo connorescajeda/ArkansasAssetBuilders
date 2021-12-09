@@ -28,28 +28,31 @@ namespace ArkansasAssetBuilders.Pages.Clients
 
         public async Task OnGetAsync(string sortOrder)
         {
-            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            AgeSort = sortOrder == "Date" ? "date_desc" : "Date";
+            NameSort = sortOrder == "name" ? "name_desc" : "name";
+            AgeSort = sortOrder == "Age" ? "age_desc" : "Age";
 
-            IQueryable<Client> studentsIQ = from s in _context.Client
+            IQueryable<Client> clientsIQ = from s in _context.Client
                                              select s;
 
             switch (sortOrder)
             {
                 case "name_desc":
-                    studentsIQ = studentsIQ.OrderByDescending(s => s.LastName);
+                    clientsIQ = clientsIQ.OrderByDescending(s => s.LastName);
+                    break;
+                case "name":
+                    clientsIQ = clientsIQ.OrderBy(s => s.LastName);
                     break;
                 case "Age":
-                    studentsIQ = studentsIQ.OrderBy(s => s.DoB);
+                    clientsIQ = clientsIQ.OrderBy(s => s.DoB);
                     break;
-                case "date_desc":
-                    studentsIQ = studentsIQ.OrderByDescending(s => s.DoB);
+                case "age_desc":
+                    clientsIQ = clientsIQ.OrderByDescending(s => s.DoB);
                     break;
                 default:
-                    studentsIQ = studentsIQ.OrderBy(s => s.LastName);
+                    clientsIQ = clientsIQ.OrderBy(s => s.LastName);
                     break;
             }
-            Client = await _context.Client.ToListAsync();
+            Client = await clientsIQ.AsNoTracking().ToListAsync();
         }
 
         public async Task<IActionResult> OnPostExportExcelAsync()
