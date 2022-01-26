@@ -14,19 +14,26 @@ header {
 
 .navbar navbar-expand-lg navbar-dark bg-primary, .collapse navbar-collapse {
     padding: 0px;
+    color: #e9ecef;
+    background-color: #e9ecef !important;
 }
 
 a.navbar-brand {
-    white-space: normal;
+    /*white-space: normal;
+        #007bff
     font-family: 'Yellowtail', cursive;
     font-size: xx-large;
     text-align: center;
-    word-break: break-all;
+    word-break: break-all;*/
+}
+.logo{
+    width: 275px;
+    height: 100px;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #a9a9a9;
 }
 
 .jumbotron {
